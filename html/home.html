@@ -1,12 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../img/KakaoTalk_logo.svg" />
     <link rel="apple-touch-icon" href="../img/KakaoTalk_logo.svg" />
+    <link rel="stylesheet" href="../css/css.css" />
+    <link rel="stylesheet" href="../css/home.css" />
     <title>KakaoTalk</title>
+    <script src="../js/demmy.js"></script>
+    <script src="../js/user.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <header>
+        <ul>
+          <li><img src="../img/profile_icon.svg" alt="list" /></li>
+          <li><img src="../img/bubble_icon.svg" alt="chat" /></li>
+          <li><img src="../img/more_icon.svg" alt="more" /></li>
+        </ul>
+      </header>
+      <div class="friendList">
+        <div class="top">
+          <p>채팅</p>
+          <div class="top-icon">
+            <img src="../img/search_icon.svg" alt="search" />
+            <img src="../img/plus_icon.svg" alt="plus" />
+          </div>
+        </div>
+        <div class="listBox">
+          <div id="user"></div>
+
+          <div class="box">
+            <div class="boxTop">
+              <p>즐겨찾기</p>
+              <div
+                class="arrow"
+                onclick="toggleList();"
+                style="transform: rotate(0deg)"
+              >
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <ul id="like" class="listStyle"></ul>
+          </div>
+
+          <div class="box">
+            <div class="boxTop">
+              <p>친구 <span id="listLength"></span></p>
+              <div
+                class="arrow"
+                onclick="toggleList();"
+                style="transform: rotate(0deg)"
+              >
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <ul id="list" class="listStyle"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/home.js"></script>
+  </body>
 </html>
