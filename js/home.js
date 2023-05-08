@@ -53,20 +53,39 @@ document.getElementById('list').innerHTML += friend
       </li>`
   )
   .join('');
+
 document.getElementById('listLength').innerHTML = friend.length;
 
-function toggleList() {
+function toggle(id) {
   let like = document.getElementById('like');
-  if (like.style.display == 'none') {
-    like.style.display = 'block';
+  let list = document.getElementById('list');
+  if (id == 'arrowLike') {
+    if (like.style.display == 'none') {
+      like.style.display = 'block';
+    } else {
+      like.style.display = 'none';
+    }
   } else {
-    like.style.display = 'none';
+    if (list.style.display == 'none') {
+      list.style.display = 'block';
+    } else {
+      list.style.display = 'none';
+    }
   }
 
-  let arrow = document.querySelector('.arrow');
-  if (arrow.style.transform == 'rotate(0deg)') {
-    arrow.style.transform = `rotate(180deg)`;
+  if (id == 'arrowLike') {
+    let arrow = document.querySelector('#arrowLike');
+    if (arrow.style.transform == 'rotate(0deg)') {
+      arrow.style.transform = `rotate(180deg)`;
+    } else {
+      arrow.style.transform = `rotate(0deg)`;
+    }
   } else {
-    arrow.style.transform = `rotate(0deg)`;
+    let arrow = document.querySelector('#arrowList');
+    if (arrow.style.transform == 'rotate(0deg)') {
+      arrow.style.transform = `rotate(180deg)`;
+    } else {
+      arrow.style.transform = `rotate(0deg)`;
+    }
   }
 }

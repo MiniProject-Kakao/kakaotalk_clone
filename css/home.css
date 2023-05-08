@@ -31,7 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: left;
-  padding: 6px 20px;
+  padding: 8px 20px;
 }
 #user:hover {
   background-color: #f3f2f2;
@@ -79,7 +79,7 @@
   display: flex;
   align-items: center;
   justify-content: left;
-  padding: 6px 20px;
+  padding: 7px 20px;
   overflow: hidden;
 }
 .box .listStyle li:hover {
@@ -142,9 +142,4 @@
 
 .box .boxTop .arrow:hover span {
   background-color: #403631;
-}
-
-/* 삭제 */
-.friendList .listBox img {
-  width: 100px;
 }
