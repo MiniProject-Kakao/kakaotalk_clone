@@ -27,11 +27,7 @@ document.getElementById('menu').innerHTML += `<ul>
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M10.5 18.8333C16.299 18.8333 21 14.8039 21 9.83331C21 4.86275 16.299 0.833313 10.5 0.833313C4.70101 0.833313 0 4.86275 0 9.83331C0 12.7001 1.56375 15.2538 4 16.902V22.3333L9.47457 18.7909C9.81196 18.819 10.154 18.8333 10.5 18.8333Z"
-        fill="${
-          link === '/html/chatList.html' || '/html/chat.html'
-            ? '#222'
-            : '#A0A1A0'
-        }"
+        fill="${link === '/html/chatList.html' ? '#222' : '#A0A1A0'}"
       />
     </svg>
   </li>
