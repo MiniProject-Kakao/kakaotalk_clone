@@ -58,4 +58,10 @@ header {
 
 header ul li {
   margin-bottom: 34px;
+  cursor: pointer;
+}
+
+header ul li svg:hover path,
+header ul li svg:hover circle {
+  fill: #737373;
 }
