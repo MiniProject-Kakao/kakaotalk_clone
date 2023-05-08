@@ -6,7 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="../img/KakaoTalk_logo.svg" />
     <link rel="apple-touch-icon" href="../img/KakaoTalk_logo.svg" />
+    <link rel="stylesheet" href="../css/signup.css" />
     <title>KakaoTalk</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <a class="comment">이메일과 비밀번호를 입력해주세요</a>
+      <form class="member-join" >
+        <section>
+        <input type="text" id="name" alt="이름입력" placeholder="성함" required> 
+        <input type="text" id="phone" alt="연락처 입력" placeholder="연락처" required>
+        </section>
+        <input type="text" id="num" alt="인증번호 입력" placeholder="인증번호 입력" required>
+        <input type="button" id="num-st"value="인증번호 발송">
+        <section class ="mail-se">
+        <input type="text" id="mail" alt="이메일 입력" placeholder="이메일" required>
+        <input type="text" class="secret-number"id="secret" alt="비밀번호 입력" placeholder="비밀번호" required>
+        <input type="text" class="secret-number" id="secret2" alt="비밀번호 확인" placeholder="비밀번호 확인" required>
+        <input type="submit" id="join" value="회원 가입">  
+        </section>
+      </form>
+    </div>
+  </body>
 </html>
