@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.chatroom {
+  width: calc(100%);
+}
+.chatroom .bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 392px;
+  height: 112px;
+  padding: 8px 10px 5px;
+}
+.chatroom .top {
+  background-color: #becdde;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 16px 20px 11px;
+}
+.top-icon img {
+  width: 21px;
+  height: 15px;
+  margin-right: 10px;
+}
+.crin_topbox {
+  background-color: #becdde;
+  width: 200px;
+  height: 53px;
+  overflow-x: hidden;
+}
+.chatBox {
+  background-color: #becdde;
+  width: 100%;
+  height: calc(80% - 50px);
+  overflow-x: auto;
+}
+.box {
+  margin-top: 10px;
+}
