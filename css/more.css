@@ -5,7 +5,6 @@
   position: absolute;
   top: 16px;
   left: 42px;
-  width: 44px;
   height: 23px;
   border-radius: 0;
   font-family: 'Noto Sans KR', sans-serif;
@@ -165,14 +164,126 @@
     vertical-align: top;
     color: #7F7F80;
   }
+  
+  .moremodal {
+    display: none;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 999;
+  }
 
-.basicprofile{
+  .modal_profilemodal {
+    display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform:translate(-50%,-50%);
+      width: 300px;
+      height: 380px;
+      background: #fff;
+      z-index: 1000;
+  }
+.basic2{
+  position: absolute;
+  left: 34%;
+  top: 20px;
+  width: 100%;
+  height: 19px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: medium;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: left;
+  font-weight: bold;
+  color: #000000;
+}
+
+.profilecharracter {
+  position: absolute;
+  top: 20%;
+  left: 33%;
+  width: 35%;
+  height: auto;
+  border-radius: 40%;
+}
+  .profilename2 {
+    position: absolute;
+  left: 10%;
+  top: 65%;
+  width: 85%;
+  height: 19px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: medium;
+  font-size: 13px;
+  line-height: 19px;
+  text-align: left;
+  color: #000000;
+}
+
+
+.profilehr {
+  position: absolute;
+  left: 10%;
+  top: 70%;
+  width: 83%;
+  height: 0;
+  border-top: 1px solid #000000;
+  border-radius: 1px;
+}
+
+
+.message {
+  position: absolute;
+  left: 10%;
+  top: 75%;
+  width: 85%;
+  height: 19px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19px;
+  text-align: left;
+  color: #000000;
+}
+
+
+.messagehr {
+  position: absolute;
+  left: 10%;
+  top: 80%;
+  width: 83%;
+  height: 0;
+  border-top: 1px solid #000000;
+  border-radius: 1px; 
+}
+
+
+.inerscheck{
+position: absolute;
+left: 46px;
+top: 340px;
+width: 70%;
+height: '';
+
+border-radius: 5px;
+
+background-color: #F2F2F2;
+}
+
+.checkiners{
 font-family: 'Noto Sans KR', sans-serif;
-font-weight: bold;
-font-size: 15px;
-line-height: 22px;
+font-weight: 500;
+font-size: 13px;
+line-height: 19px;
 text-align: left;
-vertical-align: top;
-letter-spacing: -4%;
-color: #000000;
+color: #999999;
+position: absolute;
+left: 118px;
+top: 5px;
 }
