@@ -46,21 +46,7 @@
   overflow: hidden;
 }
 
-.box .listStyle li div:first-of-type div {
-  min-width: 11px;
-  min-height: 11px;
-  width: 11px;
-  height: 11px;
-  overflow: hidden;
-}
-
 .box .listStyle li div:first-of-type img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.box .listStyle li div:first-of-type div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
