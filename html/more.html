@@ -8,29 +8,69 @@
     <link rel="apple-touch-icon" href="../img/KakaoTalk_logo.svg" />
     <link rel="stylesheet" href="../css/more.css" />
     <link rel="stylesheet" href="../css/css.css" />
+    
     <title>KakaoTalk</title>
+    
+
   </head>
   <body>
-    <header id="menu"></header>
-   <div class = "see more">
-    <p class = "see">더보기</p>
-   </div>
-    <div class = "profile">
-      <p class = "profile-name">사용자</p>
-      <p class = "profile-id">계정</p>
-      <p class = "profile-email">이메일@이메일</p>
-      <p class = "profile-contacted">연락처</p>
-      <p class = "profile-phone">000-0000-0000</p>
-    </div>
-
+    <div class="container">
+      <header id="menu"></header>
+      <div class = "see more">
+        <p class = "see">더보기</p>
+      </div>
+      <div class = "profile">
+        <p class = "profile-name">사용자</p>
+        <p class = "profile-id">계정</p>
+        <p class = "profile-email">이메일@이메일</p>
+        <p class = "profile-contacted">연락처</p>
+        <p class = "profile-phone">000-0000-0000</p>
+      </div>
+      
       <hr class="contour">
-
-    <div class = "Personal settings">
-      <p class = "basic">기본 프로필 관리</p>
-        <button class = "buttonredaction"><span class="redaction"> 편집 </span></button></p>
+      
+      <div class = "Personal settings">
+        <p class = "basic">기본 프로필관리</p>
+        <button class = "buttonredaction"><span class="redaction"> 편집 </span></button>
+      </div>
+      
+      <div class = "moremodal"></div>
+      <div class="modal_profilemodal">
+        <p class = "basic2">기본 프로필관리</p>
+        <img 
+        src="https://t1.kakaocdn.net/friends/new_store/prod/character/character_20230502134308_2e69548418dd497a81dc68175eb02aac.png"
+        class = "profilecharracter">
+        <div>
+        <p class = "profilename2"> 사용자 </p>
+        <hr class = "profilehr">
+        <p class = "message">상태메시지를 입력해주세요.</p>
+        <hr class = "messagehr">
+        <button class = "inerscheck">확인</button>
+      </div>
       </div>
 
-      <div><p class = "secession">탈퇴하기</p></div>
-      <script src="../js/menu.js"></script>
-  </body>
+    
+    <div><button class = "secession">탈퇴하기</button></div>
+    <div><p>'''</p></div>
+    
+    
+  </div>
+  <script src="../js/more.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+  function open() {
+    document.querySelector('.moremodal').style.display = 'block';
+    document.querySelector('.modal_profilemodal').style.display = 'block';
+  }
+
+  function close() {
+    document.querySelector('.moremodal').style.display = 'none';
+    document.querySelector('.modal_profilemodal').style.display = 'none';
+  }
+
+  document.querySelector('.buttonredaction').addEventListener('click', open);
+  document.querySelector('.inerscheck').addEventListener('click', close);
+</script>
+</body>
 </html>
