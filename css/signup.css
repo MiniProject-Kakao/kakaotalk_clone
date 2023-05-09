@@ -7,6 +7,13 @@
     font-family: 'Noto Sans KR', sans-serif;
   }
 
+a{
+  text-decoration: none;
+}
+
+input{
+  border: 1px solid #E0CF45;
+}
 html,
 body {
   width: 100%;
@@ -106,4 +113,8 @@ body {
 
   submit {
     text-align: center;
+  }
+
+  .secret-mark{
+    margin-left: 76px;
   }
