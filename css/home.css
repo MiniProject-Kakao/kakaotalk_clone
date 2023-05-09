@@ -272,6 +272,11 @@
   color: '#000';
   background-color: #f2f2f2;
 }
-#plusUser_form button:hover {
+#plusUser_form button.active {
+  cursor: pointer;
+  color: #000;
+  background-color: #fae64d;
+}
+#plusUser_form button.active:hover {
   background-color: #f5db4b;
 }

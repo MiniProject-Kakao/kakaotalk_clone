@@ -11,11 +11,10 @@ function modal() {
     form.style.display = 'flex';
     inputName.focus();
   } else {
-    form.style.display = 'none';
     inputName.value = '';
     inputPhone.value = '';
-    button.disabled = false;
-    button.style.backgroundColor = '#F2F2F2';
+    form.style.display = 'none';
+    button.classList.remove('active');
   }
 }
 
@@ -27,12 +26,8 @@ function activeButton() {
   let phoneValue = inputPhone.value;
 
   if (nameValue.length > 0 && phoneValue.length >= 10) {
-    button.disabled = true;
-    button.style.cursor = 'pointer';
-    button.style.color = '#000';
-    button.style.backgroundColor = '#FAE64D';
+    button.classList.add('active');
   } else {
-    button.disabled = false;
-    button.style.backgroundColor = '#F2F2F2';
+    button.classList.remove('active');
   }
 }
