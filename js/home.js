@@ -1,56 +1,34 @@
-document.getElementById('user').innerHTML +=
-  user.value.length == 0
-    ? `<div>
-    <img src=${user.icon_url}>
-  </div>
+document.getElementById('user').innerHTML += `<div><img src=${
+  user.icon_url
+} /></div>
   <div>
     <p>${user.name}</p>
-  </div>`
-    : `<div>
-    <img src=${user.icon_url}>
-  </div>
-  <div>
-    <p>${user.name}</p>
-    <p>${user.value}</p>
+    ${user.value.length != 0 ? `<p>${user.value}</p>` : ''}
   </div>`;
 
 document.getElementById('like').innerHTML += friend
   .map(el =>
     el.like
-      ? el.value.length == 0
-        ? `<li>
-        <div><img src=${el.icon_url} /></div>
-        <div>
-          <p>${el.name}</p>
-        </div>
-      </li>`
-        : `<li>
-        <div><img src=${el.icon_url} /></div>
-        <div>
-          <p>${el.name}</p>
-          <p>${el.value}</p>
-        </div>
-      </li>`
+      ? `<li>
+          <div><img src=${el.icon_url} /></div>
+          <div>
+            <p>${el.name}</p>
+            ${el.value.length != 0 ? `<p>${el.value}</p>` : ''}
+          </div>
+        </li>`
       : ''
   )
   .join('');
 
 document.getElementById('list').innerHTML += friend
-  .map(el =>
-    el.value.length == 0
-      ? `<li>
-        <div><img src=${el.icon_url} /></div>
-        <div>
-          <p>${el.name}</p>
-        </div>
-      </li>`
-      : `<li>
-        <div><img src=${el.icon_url} /></div>
-        <div>
-          <p>${el.name}</p>
-          <p>${el.value}</p>
-        </div>
-      </li>`
+  .map(
+    el => `<li>
+      <div><img src=${el.icon_url} /></div>
+      <div>
+        <p>${el.name}</p>
+        ${el.value.length != 0 ? `<p>${el.value}</p>` : ''}
+      </div>
+    </li>`
   )
   .join('');
 

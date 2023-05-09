@@ -4,9 +4,9 @@ const inputName = document.getElementById('inputName');
 const inputPhone = document.getElementById('inputPhone');
 const button = document.getElementById('addButton');
 
-plusUserIcon.addEventListener('click', popup);
+plusUserIcon.addEventListener('click', modal);
 
-function popup() {
+function modal() {
   if (form.style.display === 'none') {
     form.style.display = 'flex';
     inputName.focus();
