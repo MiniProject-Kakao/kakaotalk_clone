@@ -13,7 +13,7 @@ const friend = [
     id: '2',
     created_at: '2020-01-05 13:42:19.324003',
     updated_at: '2020-01-05 13:42:19.324003',
-    name: 'userName',
+    name: 'user한',
     like: false,
     icon_url:
       'https://image.utoimage.com/preview/cp872722/2022/12/202212008462_206.jpg',
@@ -23,7 +23,7 @@ const friend = [
     id: '3',
     created_at: '2020-01-05 13:42:19.324003',
     updated_at: '2020-01-05 13:42:19.324003',
-    name: 'userName',
+    name: 'userKim',
     like: false,
     icon_url:
       'https://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg',
@@ -37,7 +37,7 @@ const friend = [
     like: false,
     icon_url:
       'https://image.utoimage.com/preview/cp872722/2022/12/202212008462_206.jpg',
-    value: '상태메시지'
+    value: ''
   },
   {
     id: '5',
