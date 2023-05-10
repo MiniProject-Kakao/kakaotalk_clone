@@ -65,6 +65,7 @@ input {
     height: 38px;
     font-size: 13px;
     border : 1px solid #E0CF45;
+    background-color: #F6F6F6;
 }
 .id-pw {
     width: 250px;
@@ -86,4 +87,9 @@ input {
     color: black;
 }
 
+.loginbtn.on{
+    background-color: #403631;
+    color: #FFFFFF;
+    cursor: pointer;
+}
 

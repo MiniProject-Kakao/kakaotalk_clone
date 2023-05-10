@@ -4,7 +4,18 @@ function check (){
     var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
     var getCheck = RegExp(/^[a-zA-Z0-9]{4,12}$/);
     var getPhone = RegExp(/^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/);
-
+    
+    if(getkorname.test($("#name").val()) || getengname.test($("#name").val())){
+        
+     }
+ 
+     else{
+         alert("성함을 정확히 입력해주세요");
+         $("#name").val("");
+         $("#name").focus();
+         return false;
+     }
+    
     if(!getPhone.test($("#phone").val())){
         alert("휴대폰번호를 확인해주세요");
         $("#phone").val("");
@@ -40,16 +51,6 @@ function check (){
         $("#pw").focus();
     }
 
-    if(getkorname.test($("#name").val()) || getengname.test($("#name").val())){
-        return true; 
-     }
- 
-     else{
-         alert("성함을 정확히 입력해주세요");
-         $("#name").val("");
-         $("#name").focus();
-         return false;
-     }
 
     
 }
