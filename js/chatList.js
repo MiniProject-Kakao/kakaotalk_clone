@@ -33,13 +33,13 @@ function DateView(updated_at) {
 document.getElementById('list').innerHTML += chatroom
   .map(el =>
     el.lastchat.length == 0
-      ? `<li>
+      ? `<li class='croomList'>
         <div><img src=${el.cr_icon_url} /></div>
         <div>
           <p>${el.cr_name}</p>
         </div>
       </li>`
-      : `<li>
+      : `<li class='croomList'>
         <div><img src=${el.cr_icon_url} /></div>
         <div>
           <p>${el.cr_name}</p>
@@ -51,3 +51,10 @@ document.getElementById('list').innerHTML += chatroom
       </li>`
   )
   .join('');
+
+let crooms = document.querySelectorAll('.croomList');
+crooms.forEach(target => target.addEventListener('click', goChatRoom));
+
+function goChatRoom() {
+  location.href = '../html/chat.html';
+}
