@@ -11,6 +11,8 @@ function createInput() {
   } else {
     searchBox.style.display = 'none';
     searchInput.value = '';
+    searchList.style.display = 'none';
+    listBox.style.display = 'block';
   }
 }
 
