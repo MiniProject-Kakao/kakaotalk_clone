@@ -5,8 +5,7 @@ const friend = [
     updated_at: '2020-01-05 13:42:19.324003',
     name: 'userName',
     like: false,
-    icon_url:
-      'https://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg',
+    icon_url: '',
     value: '상태메시지'
   },
   {
