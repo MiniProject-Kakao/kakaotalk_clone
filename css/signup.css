@@ -89,6 +89,10 @@ body {
     margin-left: 76px;
     font-size :13px;
   }
+
+  #time{
+    margin-left: 20px;
+  }
   
   .mail-se {
     display: flex;
