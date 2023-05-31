@@ -1,0 +1,324 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.friendList {
+  position: relative;
+  width: calc(100% - 65px);
+}
+.friendList .top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 16px 20px 11px;
+}
+
+.top p {
+  font-size: 16px;
+  font-weight: bold;
+}
+.top-icon img {
+  cursor: pointer;
+}
+.top-icon img:nth-of-type(1) {
+  margin-right: 18px;
+}
+
+/* 검색박스 */
+#search {
+  width: calc(100%-40px);
+  height: 28px;
+  display: flex;
+  background-color: #f8f8f8;
+  line-height: 100%;
+  margin: 0px 20px 6px;
+  border-radius: 2px;
+  border: 1px solid #f0f0f0;
+  padding: 4px 8px;
+}
+#search .reading_glasses {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin-right: 8px;
+}
+#search .reading_glasses .circle {
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid #7c7c7c;
+  border-radius: 100%;
+}
+#search .reading_glasses .line {
+  width: 5px;
+  height: 1.5px;
+  background-color: #7c7c7c;
+  border-radius: 1px;
+  transform: rotate(45deg) translate(4px, -5.5px);
+}
+#search #searchInput {
+  width: 100%;
+  height: 100%;
+}
+
+#searchList {
+  width: 100%;
+  height: calc(100% - 50px - 28px);
+  overflow-x: auto;
+}
+#listBox {
+  width: 100%;
+  height: calc(100% - 50px);
+  overflow-x: auto;
+}
+
+/* 사용자 */
+#user {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 8px 20px;
+}
+#user:hover {
+  background-color: #f3f2f2;
+}
+#user > div:nth-of-type(1) {
+  min-width: 54px;
+  min-height: 54px;
+  width: 54px;
+  height: 54px;
+  margin-right: 12px;
+  border-radius: 21px;
+  overflow: hidden;
+}
+#user > div:nth-of-type(1) img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#user > div:nth-of-type(2) p:nth-of-type(1) {
+  font-size: 13px;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#user > div:nth-of-type(2) p:nth-of-type(2) {
+  font-size: 12px;
+  color: #7f807f;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 즐겨찾기 */
+.box {
+  margin-top: 10px;
+}
+.box .boxTop {
+  padding: 10px 1px 10px 0;
+  margin: 0 20px;
+  border-top: 1px solid #f3f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.box .boxTop p {
+  font-weight: medium;
+  font-size: 11px;
+  color: #999a99;
+}
+.listStyle > li {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 7px 20px;
+  position: relative;
+}
+.listStyle > li:hover {
+  background-color: #f3f2f2;
+}
+
+.listStyle #bookmark {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  left: 8px;
+}
+.listStyle #bookmark li {
+  border-radius: 50%;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+.listStyle #bookmark li:nth-of-type(1) {
+  margin-right: 5px;
+}
+.listStyle #bookmark li:hover {
+  background-color: #c5c5c597;
+}
+
+.listStyle li .profile_img {
+  min-width: 40px;
+  min-height: 40px;
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.listStyle li .profile_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.listStyle li .detail {
+  width: 100%;
+  overflow: hidden;
+}
+.listStyle li .detail p:nth-of-type(1) {
+  font-size: 13px;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.listStyle li .detail p:nth-of-type(2) {
+  font-size: 12px;
+  color: #7f807f;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 화살표 */
+.box .boxTop .arrow {
+  width: 10px;
+  height: 5px;
+  transition: all 0.2s ease;
+  position: relative;
+  transform: rotate(0deg);
+}
+.box .boxTop .arrow span {
+  position: absolute;
+  width: 6px;
+  height: 1px;
+  background-color: #b2b2b3;
+  transform: translate(-50%, -50%);
+}
+.box .boxTop .arrow span:first-of-type {
+  left: 0;
+  top: 2px;
+  transform: rotate(40deg);
+}
+.box .boxTop .arrow span:last-of-type {
+  right: 0;
+  top: 2px;
+  transform: rotate(-40deg);
+}
+
+.box .boxTop .arrow:hover span {
+  background-color: #403631;
+}
+
+/* 친구추가 form */
+#plusUser_form {
+  z-index: 99999;
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 300px;
+  height: 400px;
+  border: 1px solid #b9b9b9;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#plusUser_form:before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  transform: rotate(-45deg);
+  top: -8.5px;
+  right: 12px;
+  width: 15px;
+  height: 15px;
+  border-right: 1px solid #b9b9b9;
+  border-top: 1px solid #b9b9b9;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+#plusUser_form .title {
+  width: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 6.5px;
+}
+
+#plusUser_form .text1 {
+  width: 100%;
+  padding: 6.5px 0;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  font-size: 12px;
+  margin-bottom: 40px;
+}
+
+#plusUser_form input {
+  width: 100%;
+  padding: 7px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e5e5;
+}
+#plusUser_form input:first-of-type {
+  margin-bottom: 9px;
+}
+#plusUser_form input:last-of-type {
+  margin-bottom: 25px;
+}
+#plusUser_form input:focus {
+  border-bottom: 1px solid #000;
+}
+
+#plusUser_form .text2 {
+  font-size: 12px;
+  color: #7f7f7f;
+}
+
+#plusUser_form button {
+  width: 100%;
+  height: 30px;
+  border-radius: 6px;
+  color: #999;
+  font-size: 12px;
+  cursor: auto;
+  color: '#000';
+  background-color: #f2f2f2;
+}
+#plusUser_form button.active {
+  cursor: pointer;
+  color: #000;
+  background-color: #fae64d;
+}
+#plusUser_form button.active:hover {
+  background-color: #f5db4b;
+}
