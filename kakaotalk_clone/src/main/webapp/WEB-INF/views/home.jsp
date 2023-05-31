@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="../img/KakaoTalk_logo.svg" />
-    <link rel="apple-touch-icon" href="../img/KakaoTalk_logo.svg" />
-    <link rel="stylesheet" href="../css/css.css" />
-    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="icon" href="/img/KakaoTalk_logo.svg" />
+    <link rel="apple-touch-icon" href="/img/KakaoTalk_logo.svg" />
+    <link rel="stylesheet" href="/css/css.css" />
+    <link rel="stylesheet" href="/css/home.css" />
     <title>KakaoTalk</title>
-    <script src="../js/demmy.js"></script>
-    <script src="../js/user.js"></script>
+    <script src="/js/dummy.js"></script>
+    <script src="/js/user.js"></script>
   </head>
   <body>
     <div class="container">
@@ -20,9 +20,9 @@
         <div class="top">
           <p>친구</p>
           <div class="top-icon">
-            <img src="../img/search_icon.svg" alt="search" id="search_icon" />
+            <img src="/img/search_icon.svg" alt="search" id="search_icon" />
             <img
-              src="../img/plusUser_icon.svg"
+              src="/img/plusUser_icon.svg"
               alt="plusUser"
               id="plusUser_icon"
             />
@@ -88,9 +88,9 @@
       </section>
     </div>
 
-    <script src="../js/home.js"></script>
-    <script src="../js/menu.js"></script>
-    <script src="../js/plusUser.js"></script>
-    <script src="../js/searchUser.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/menu.js"></script>
+    <script src="/js/plusUser.js"></script>
+    <script src="/js/searchUser.js"></script>
   </body>
 </html>
