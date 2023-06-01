@@ -50,7 +50,7 @@
             alt="자동로그인"
           />자동로그인</label
         >
-        <a href="/html/signup.html" class="id-pass">회원가입</a>
+        <a href="signup" class="id-pass">회원가입</a>
       </form>
     </div>
   </body>
