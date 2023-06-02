@@ -16,7 +16,7 @@
   <body>
     <div class="container">
       <a class="comment">이메일과 비밀번호를 입력해주세요</a>
-      <form class="member-join" action="/html/signin.html">
+      <form method="post" class="member-join" action="/signin">
         <section>
           <input
             type="text"
