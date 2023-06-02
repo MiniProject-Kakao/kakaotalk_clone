@@ -5,7 +5,7 @@
 
 <typeAliases>
 	<typeAlias type="com.example.demo.Y_MemberDTO" alias="memberdto"/>
-	
+	<typeAlias type="com.chat.chatlist.ChatListDTO" alias="chatlistdto"/>
 </typeAliases>
 
 </configuration>
