@@ -8,6 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = "com.example")
 @ComponentScan(basePackages = "com.chat")
+@ComponentScan(basePackages = "com.friend.service")
+@MapperScan(basePackages = "com.friend.service")
 @MapperScan(basePackages = "com.example")
 @MapperScan(basePackages = "com.chat")
 public class KakaotalkCloneApplication {

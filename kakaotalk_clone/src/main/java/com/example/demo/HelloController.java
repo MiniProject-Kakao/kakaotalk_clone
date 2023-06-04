@@ -41,16 +41,6 @@ public class HelloController {
 		else return "signup";
 	}
 	
-	
-	
-	@RequestMapping("/home")
-	public ModelAndView home() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("home");
-		
-		return mv;
-	}
-	
 	@RequestMapping("/more")
 	public ModelAndView more() {
 		ModelAndView mv = new ModelAndView();

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.friend.service.FriendDAO">
+
+	<select id="getTotalFriend" resultType="friendresultdto" parameterType="string">
+		select * from friend_list f
+		left join user iu
+		on iu.user_id = f.my_user_id
+		left join user fu
+		on fu.user_id = f.friend_user_id
+		where my_user_id=#{my_user_id}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
