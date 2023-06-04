@@ -50,20 +50,7 @@ public class HelloController {
 		
 		return mv;
 	}
-	@RequestMapping("/chat")
-	public ModelAndView chat() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("chat");
-		
-		return mv;
-	}
-	@RequestMapping("/chatlist")
-	public ModelAndView chatlist() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("chatList");
-		
-		return mv;
-	}
+	
 	@RequestMapping("/more")
 	public ModelAndView more() {
 		ModelAndView mv = new ModelAndView();

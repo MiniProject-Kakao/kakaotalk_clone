@@ -1,3 +1,4 @@
+//interlocutor
 document.getElementById('il').innerHTML += `<li>
       <div><img src=${interlocutor.il_icon_url} alt='usericon'/></div>
       <div>
@@ -5,6 +6,9 @@ document.getElementById('il').innerHTML += `<li>
       </div>
   </li>`;
 
+
+/*
+//chatting
 let temp_name = '';
 
 document.getElementById('chat').innerHTML += chatlog
@@ -65,8 +69,43 @@ document.getElementById('chat').innerHTML += chatlog
   })
   .join('');
 
+*/
+
+//websocket
+  var ws;
+
+  function wsOpen(){
+  	ws = new WebSocket("ws://" + location.host + "/chatting");
+  	wsEvt();
+  }
+  		
+  function wsEvt() {
+  	ws.onopen = function(data){
+		  
+  	}
+  		
+  	ws.onmessage = function(data) {
+  		var msg = data.data;
+  		if(msg != null && msg.trim() != ''){
+  			$("#chat").append("<li class='chatStyleMe'><div><div><p>" + msg + "</p></div></div></li>");
+  			$('#chatdiv').scrollTop($('#chatdiv')[0].scrollHeight);
+  		}
+  	}
+  }
+
+	
+  function send() {
+  	var msg = $("#chatbox").val();
+  	msg = msg.replace(/(?:\r\n|\r|\n)/g, '<br />');
+  	ws.send(msg);
+  	$('#chatbox').val("");
+  }
+  
+  $(document).ready(wsOpen());
+
+//exit
 const exit = document.getElementById('exit');
 exit.addEventListener('click', goChatList);
 function goChatList() {
-  location.href = '../html/chatList.html';
+  location.href = '/chatlist';
 }
