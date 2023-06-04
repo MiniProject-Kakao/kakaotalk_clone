@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -13,6 +14,16 @@
     <title>KakaoTalk</title>
     <script src="/js/dummy.js"></script>
     <script src="/js/user.js"></script>
+    <script>
+	let my_id = <%=session.getAttribute("my_user_id")%>
+				? "<%=session.getAttribute("my_user_id")%>"
+				: null;
+	
+	if(my_id === null){
+		alert("로그인해주세요.");
+		location.href = "/signin";
+	}
+	</script>
   </head>
   <body>
     <div class="container">
@@ -94,5 +105,6 @@
     <script src="/js/menu.js"></script>
     <script src="/js/plusUser.js"></script>
     <script src="/js/searchUser.js"></script>
+    
   </body>
 </html>
