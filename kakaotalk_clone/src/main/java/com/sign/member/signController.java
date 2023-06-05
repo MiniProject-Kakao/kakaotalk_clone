@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import jakarta.servlet.http.HttpSession;
 @Controller
 public class signController {
 	
@@ -43,5 +45,26 @@ public class signController {
 		}
 		else return "signup";
 	}
+	
+	
+	@GetMapping("/Login")
+	public String loginprocess(String id, String password,HttpSession session) {
+		MemberDTO dto = ms.LoginMember(id);
+		if(dto != null) {
+			System.out.println(dto.getPassword());
+			System.out.println(password);
+			int i =Integer.parseInt(dto.getPassword());
+			int k =Integer.parseInt(password);
+			if(i == k) {
+				session.setAttribute("my_user_id", dto.getUser_id());
+			System.out.println("1"+session.getAttribute("my_user_id"));
+				return "home" ;
+			}
+			System.out.println("2"+session.getAttribute("my_user_id"));	
+		//return "signin";
+	}
+		return "signin";
 
 }
+}
+

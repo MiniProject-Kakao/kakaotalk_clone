@@ -16,7 +16,7 @@
   <body>
     <div class="container">
       <img src="/img/kakaoTalk_logo.svg" alt="카카오톡 로고" class="logo" />
-      <form name="loginform" action="/home" id="login_form">
+      <form  name="loginform" action="/Login" id="login_form">
         <input
           type="text"
           class="id-pw"
@@ -29,8 +29,8 @@
         <input
           type="password"
           class="id-pw"
-          name="pw"
-          id="pw"
+          name="password"
+          id="password"
           alt="pw입력"
           placeholder="비밀번호"
           required
