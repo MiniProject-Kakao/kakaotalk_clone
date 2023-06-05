@@ -47,7 +47,7 @@ public class signController {
 	}
 	
 	
-	@GetMapping("/Login")
+	@PostMapping("/Login")
 	public String loginprocess(String id, String password,HttpSession session) {
 		MemberDTO dto = ms.LoginMember(id);
 		if(dto != null) {
@@ -57,11 +57,8 @@ public class signController {
 			int k =Integer.parseInt(password);
 			if(i == k) {
 				session.setAttribute("my_user_id", dto.getUser_id());
-			System.out.println("1"+session.getAttribute("my_user_id"));
-				return "home" ;
+				return "/home" ;
 			}
-			System.out.println("2"+session.getAttribute("my_user_id"));	
-		//return "signin";
 	}
 		return "signin";
 

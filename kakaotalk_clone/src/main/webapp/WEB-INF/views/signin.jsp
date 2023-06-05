@@ -16,7 +16,7 @@
   <body>
     <div class="container">
       <img src="/img/kakaoTalk_logo.svg" alt="카카오톡 로고" class="logo" />
-      <form  name="loginform" action="/Login" id="login_form">
+      <form  method="post" name="loginform" action="/Login" id="login_form">
         <input
           type="text"
           class="id-pw"
@@ -39,9 +39,10 @@
           type="submit"
           class="loginbtn"
           value="로그인"
-          onclick="return check()"
-          disabled
-        />
+
+        onclick="return check()"
+          disabled />
+          
         <label class="auto-login">
           <input
             type="checkbox"
