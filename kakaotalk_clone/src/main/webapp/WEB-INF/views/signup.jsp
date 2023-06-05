@@ -16,11 +16,12 @@
   <body>
     <div class="container">
       <a class="comment">이메일과 비밀번호를 입력해주세요</a>
-      <form method="post" class="member-join" action="/signin">
+      <form method="post" class="member-join" action="/signup">
         <section>
           <input
             type="text"
             id="name"
+            name="name"
             alt="이름입력"
             placeholder="성함"
             required
@@ -28,6 +29,7 @@
           <input
             type="text"
             id="phone"
+            name="phone"
             alt="연락처 입력"
             placeholder="연락처"
             required
@@ -51,6 +53,7 @@
           <input
             type="text"
             id="mail"
+            name="mail"
             alt="이메일 입력"
             placeholder="이메일"
             required
@@ -59,6 +62,7 @@
             type="password"
             class="secret-number"
             id="pw"
+            name="pw"
             alt="비밀번호 입력"
             placeholder="비밀번호"
             required

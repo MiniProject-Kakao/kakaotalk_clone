@@ -16,7 +16,7 @@
   <body>
     <div class="container">
       <img src="/img/kakaoTalk_logo.svg" alt="카카오톡 로고" class="logo" />
-      <form name="loginform" action="/html/home.html" id="login_form">
+      <form name="loginform" action="/home" id="login_form">
         <input
           type="text"
           class="id-pw"
@@ -50,7 +50,7 @@
             alt="자동로그인"
           />자동로그인</label
         >
-        <a href="signup" class="id-pass">회원가입</a>
+        <a href="/signup" class="id-pass">회원가입</a>
       </form>
     </div>
   </body>

@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sign.member.MemberDTO;
+import com.sign.member.MemberService;
+
 @Controller
 public class HelloController {
-	
-	@Autowired
-	Y_MemberService ms;
 	
 	
 	@RequestMapping("/")
@@ -19,27 +19,6 @@ public class HelloController {
 		return "signin";
 	}
 	
-	@RequestMapping("/signin")
-	public ModelAndView signin() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("signin");
-		
-		return mv;
-	}
-	@RequestMapping("/signup")
-	public ModelAndView signup() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("signup");
-		return mv;
-	}
-	
-	@PostMapping("/signup")
-	public String signup(Y_MemberDTO Y_MemberDTO) {
-		if(ms.insertMember(Y_MemberDTO)>0) {
-			return "signin";
-		}
-		else return "signup";
-	}
 	
 	@RequestMapping("/more")
 	public ModelAndView more() {
