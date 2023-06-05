@@ -4,6 +4,9 @@
   
   <mapper namespace="com.sign.member.MemberDAO">
   	<insert id="insertMember" parameterType="memberdto">
-  		INSERT INTO user(name,phone,email,password) values(#{name},#{phone},#{mail},#{pw})
+  		INSERT INTO user(name,phone,email,password) values(#{name},#{phone},#{mail},#{password})
   	</insert>
+  	<select parameterType="String" resultType="memberdto" id="LoginMember">
+  		select * from user where email = #{id} or phone=#{id}
+  	</select>
   </mapper>

@@ -62,7 +62,7 @@
             type="password"
             class="secret-number"
             id="pw"
-            name="pw"
+            name="password"
             alt="비밀번호 입력"
             placeholder="비밀번호"
             required

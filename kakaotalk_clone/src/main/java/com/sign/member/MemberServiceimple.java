@@ -13,5 +13,8 @@ public class MemberServiceimple implements MemberService{
 	public int insertMember(MemberDTO memberDTO) {
 		return dao.insertMember(memberDTO);
 	}
-
+	public MemberDTO LoginMember(String id) {
+		return dao.LoginMember(id);
+	}
+	
 }
