@@ -3,5 +3,8 @@ package com.friend.service;
 import java.util.List;
 
 public interface FriendService {
-	public List<FriendDTO> getTotalFriend(String my_user_id);
+	public List<FriendResultDTO> getTotalFriend(String my_user_id);
+	public int addFreind(String name, String phone,String my_user_id);
+	public void updateFollow(Boolean follow, String id);
+	public UserDTO findUserById(String user_id);
 }
