@@ -1,10 +1,10 @@
-const addUserIcon = document.getElementById('addUser_icon');
-const form = document.getElementById('addUser_form');
+const plusUserIcon = document.getElementById('plusUser_icon');
+const form = document.getElementById('plusUser_form');
 const inputName = document.getElementById('inputName');
 const inputPhone = document.getElementById('inputPhone');
 const button = document.getElementById('addButton');
 
-addUserIcon.addEventListener('click', modal);
+plusUserIcon.addEventListener('click', modal);
 
 function modal() {
   if (form.style.display === 'none') {

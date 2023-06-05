@@ -67,12 +67,4 @@ public class UserDTO {
 	public void setStatus_message(String status_message) {
 		this.status_message = status_message;
 	}
-	@Override
-	public String toString() {
-		return "UserDTO [user_id=" + user_id + ", name=" + name + ", phone=" + phone + ", email=" + email
-				+ ", password=" + password + ", profile_image=" + profile_image + ", profile_back_image="
-				+ profile_back_image + ", created_at=" + created_at + ", deleted_at=" + deleted_at + ", status_message="
-				+ status_message + "]";
-	}
-	
 }
