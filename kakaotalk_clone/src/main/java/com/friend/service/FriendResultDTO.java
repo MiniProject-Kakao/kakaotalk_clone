@@ -2,7 +2,7 @@ package com.friend.service;
 
 public class FriendResultDTO {
 	String id;
-	UserDTO my_user_id, friend_user_id;
+	UserDTO friend_user_id;
 	boolean follow;
 	
 	public String getId() {
@@ -11,12 +11,7 @@ public class FriendResultDTO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public UserDTO getMy_user_id() {
-		return my_user_id;
-	}
-	public void setMy_user_id(UserDTO my_user_id) {
-		this.my_user_id = my_user_id;
-	}
+
 	public UserDTO getFriend_user_id() {
 		return friend_user_id;
 	}
@@ -29,4 +24,10 @@ public class FriendResultDTO {
 	public void setFollow(boolean follow) {
 		this.follow = follow;
 	}
+	@Override
+	public String toString() {
+		return "FriendResultDTO [id=" + id + ", friend_user_id=" + friend_user_id
+				+ ", follow=" + follow + "]";
+	}
+	
 }
