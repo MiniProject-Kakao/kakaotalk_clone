@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="/css/chatList.css" />
     <title>KakaoTalk</title>
 	<script src="/js/jquery-3.6.4.min.js"></script>
-    <script src="/js/croomdummy.js"></script>
     <script src="/js/chatList.js"></script>
   </head>
   <body>
@@ -41,7 +40,7 @@
           <div class="box">
             <ul id="list" class="listStyle">
 				<c:forEach items="${chatlist}" var="dto">	
-            		<li class='croomList'>
+            		<li class='croomList' id="${dto.chat_list_id}">
         			<div><img src="${dto.icon_url}" /></div>
         			<div>
           				<p>${dto.cr_name}</p>
