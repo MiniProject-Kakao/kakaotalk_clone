@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,7 +13,6 @@
     <link rel="stylesheet" href="/css/chat.css" />
     <title>KakaoTalk</title>
 	<script src="/js/jquery-3.6.4.min.js"></script>
-    <script src="/js/chatdummy.js"></script>
   </head>
 
   <body>
@@ -20,7 +20,14 @@
       <section class="chatroom">
         <div class="top">
           <div class="crin_topbox">
-            <ul id="il" class="ilinfo"></ul>
+            <ul id="il" class="ilinfo">
+            	<li>
+      				<div><img src='${chatlog[0].icon_url}' alt='usericon'/></div>
+      				<div>
+         				<p>${chatlog[0].cr_name}</p>
+      				</div>
+ 			 	</li>
+            </ul>
           </div>
           <div class="top-icon">
             <img src="/img/exit_icon.svg" alt="exit" id="exit" />
@@ -32,61 +39,53 @@
         <div class="chatBox" id="chatdiv">
           <div class="box">
             <ul id="chat" class="chatStyle">
-            	<li class='chatStyleli'>
-              		<div>
-                  		<img src='../img/user-circle.svg' alt='usericon'/>
-              		</div>
-              		<div>
-              			<p>너입니다</p>
-              			<div><p>안녕하세요</p></div>
-              		</div>
-              	</li>
-              	<li class='chatStyleMe'>
-          			<div>
-            			<div>
-              				<p>안녕하세요?</p>
-              			</div>
-            		</div>
-            	</li>
-            	<li class='chatStyleMe'>
-          			<div>
-            			<div>
-              				<p>안녕하세요?</p>
-              			</div>
-            		</div>
-            	</li>
-            	<li class='chatStyleli'>
-              		<div>
-                  		<img src='../img/user-circle.svg' alt='usericon'/>
-              		</div>
-              		<div>
-              			<p>너입니다</p>
-              			<div><p>안녕하세요</p></div>
-              		</div>
-              	</li>
-              	<li class='chatStyleli'>
-              		<div>
-                  		<img src='../img/user-circle.svg' alt='usericon'/>
-              		</div>
-              		<div>
-              			<p>너입니다</p>
-              			<div><img src='https://image.utoimage.com/preview/cp872722/2022/12/202212008462_206.jpg' alt='aas' /></div>
-              		</div>
-              	</li>
-              	<li class='chatStyleMe'>
-          			<div>
-            			<div>
-              				<img src='https://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg' alt='aas' />
-              			</div>
-            		</div>
-            	</li>
+            	<c:forEach items="${chatlog}" var="dto">
+            		<c:choose>
+            		<c:when test="${dto.user_id == 'test123'}">
+            			<li class='chatStyleMe'>
+          					<div>
+            					<div>
+            						<c:choose>
+            							<c:when test="${dto.type == 'img'}">
+            								<img src='${dto.content}' alt='img'>
+            							</c:when>
+            							<c:otherwise>
+            								<p>${dto.content}</p>
+            							</c:otherwise>
+            						</c:choose>
+              					</div>
+            				</div>
+            			</li>
+            		</c:when>
+            		<c:otherwise>
+            			<li class='chatStyleli'>
+              				<div>
+                  				<img src='${dto.profile_image}' alt='usericon'/>
+              				</div>
+              				<div>
+              					<p>${dto.name}</p>
+              					<div>
+              						<c:choose>
+            							<c:when test="${dto.type == 'img'}">
+            								<img src='${dto.content}' alt='img'>
+            							</c:when>
+            							<c:otherwise>
+            								<p>${dto.content}</p>
+            							</c:otherwise>
+            						</c:choose>
+              					</div>
+              				</div>
+              			</li>
+            		</c:otherwise>
+            		</c:choose>
+            	</c:forEach>
             </ul>
           </div>
         </div>
 
         <div class="bottom">
           <div>
-            <form action="/html/chat.html">
+            <form action="sendform" method="post">
               <textarea
                 aria-label="chatbox"
                 id="chatbox"

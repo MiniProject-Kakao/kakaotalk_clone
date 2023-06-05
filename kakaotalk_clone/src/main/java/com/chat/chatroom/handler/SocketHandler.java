@@ -3,6 +3,9 @@ package com.chat.chatroom.handler;
 import java.io.IOException;
 import java.util.HashMap;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -18,10 +21,12 @@ public class SocketHandler extends TextWebSocketHandler {
 	public void handleTextMessage(WebSocketSession session, TextMessage message) {
 		//send message
 		String msg = message.getPayload();
+		JSONObject obj = jsonToObjectParser(msg);
+		System.out.println(obj.toString());
 		for (String key : sessionMap.keySet()) {
 			WebSocketSession wss = sessionMap.get(key);
 			try {
-				wss.sendMessage(new TextMessage(msg));
+				wss.sendMessage(new TextMessage(obj.toJSONString()));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -42,4 +47,14 @@ public class SocketHandler extends TextWebSocketHandler {
 		super.afterConnectionClosed(session, status);
 	}
 	
+	private static JSONObject jsonToObjectParser(String jsonStr) {
+		JSONParser parser = new JSONParser();
+		JSONObject obj = null;
+		try {
+			obj = (JSONObject) parser.parse(jsonStr);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return obj;
+	}
 }

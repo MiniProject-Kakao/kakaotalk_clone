@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chat.chatroom.controller.ChatDAO">
+
+<select id="getMonthChat" parameterType="String" resultType="chatdto">
+	select c.chat_id, c.chat_list_id, c.user_id, c.created_at, c.updated_at, c.content, c.type, u.name, u.profile_image, cl.cr_name, cl.icon_url
+	from chat c
+	left join user u
+	on c.user_id = u.user_id
+	left join chat_list cl
+	on c.chat_list_id = cl.chat_list_id
+	where c.chat_list_id = #{chat_list_id}
+	and c.updated_at between date_add(now(), interval -1 month) AND date_add(now(), interval -0 month)
+	order by updated_at asc;
+</select>
+
+
+</mapper>
+
+
+
+
+
+
