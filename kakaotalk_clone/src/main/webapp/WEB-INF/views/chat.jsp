@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%> 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,7 +49,7 @@
             					<div>
             						<c:choose>
             							<c:when test="${dto.type == 'img'}">
-            								<img src='${dto.content}' alt='img'>
+            								<img src="<spring:url value='${dto.content}' />" alt='img' />
             							</c:when>
             							<c:otherwise>
             								<p>${dto.content}</p>
@@ -85,7 +87,7 @@
 
         <div class="bottom">
           <div>
-            <form action="sendform" method="post">
+            <form action="imgupload" id="imgform" method="post" enctype="multipart/form-data">
               <textarea
                 aria-label="chatbox"
                 id="chatbox"
@@ -94,8 +96,17 @@
                 cols="42"
                 rows="4"
               ></textarea>
-              <button type="button" onclick="send()" id="sendbtn" class="chatsubmit">전송</button>
-            </form>
+              <div class="submitchat">
+              	
+              	<input type="hidden" id="chat_list_id" name="chat_list_id" value="${chatlog[0].chat_list_id}">
+              	<input type="hidden" id="user_id" name="user_id">
+              	<input type="hidden" id="type" name="type">
+              	<input type="hidden" id="content" name="content">
+              	<label class="imgfile" for="file1">이미지</label>
+              	<input type="file" id="file1" name="file1" accept="image/*"/>
+             	<button type="button" onclick="send()" id="sendbtn" class="chatsubmit">전송</button>
+              </div>
+              </form>
           </div>
         </div>
       </section>

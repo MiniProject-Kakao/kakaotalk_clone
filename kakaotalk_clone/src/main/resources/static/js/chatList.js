@@ -1,7 +1,7 @@
 function goChatRoom() {
 	var form = document.createElement("form");
 	form.setAttribute("charset","UTF-8");
-	form.setAttribute("method","Post");
+	form.setAttribute("method","Get");
 	form.setAttribute("action", "chat");
 	this.appendChild(form);
 	
@@ -17,6 +17,7 @@ function goChatRoom() {
 $(document).ready(function() {
 	let crooms = document.querySelectorAll('.croomList');
 	crooms.forEach(target => target.addEventListener('click', goChatRoom));
+	
 });
 
 

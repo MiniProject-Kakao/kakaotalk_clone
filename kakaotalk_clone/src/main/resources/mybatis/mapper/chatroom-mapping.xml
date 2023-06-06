@@ -16,6 +16,11 @@
 </select>
 
 
+<insert id="insertChat" parameterType="chatdto">
+	insert into chat 
+	values(default, #{chat_list_id}, #{user_id}, default, default, #{content} , #{type});
+</insert>
+
 </mapper>
 
 
