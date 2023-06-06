@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class FriendServiceImpl implements FriendService {
-	@Autowired // 필요한 의존 객체의 “타입"에 해당하는 빈을 찾아 주입한다.(생성자, setter, 필드)
+	@Autowired
 	FriendDAO dao;
 	
 	@Override

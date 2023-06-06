@@ -21,7 +21,7 @@ public class FriendController {
 	@GetMapping("/home")
 	public ModelAndView friendList(HttpSession session) {
 		ModelAndView mv = new ModelAndView();
-		System.out.println(session.getAttribute("my_user_id"));
+
 		if (session.getAttribute("my_user_id") != null) {
 			String my_id = session.getAttribute("my_user_id").toString();
 			List<FriendResultDTO> friend_list = service.getTotalFriend(my_id);
@@ -66,7 +66,6 @@ public class FriendController {
 			String my_user_id = session.getAttribute("my_user_id").toString();
 			List<FriendResultDTO> search_list = service.searchList(my_user_id, word);
 			
-			System.out.println(word);
 			mv.addObject("search_list",search_list);
 		}
 		
