@@ -41,7 +41,7 @@
             <ul id="list" class="listStyle">
 				<c:forEach items="${chatlist}" var="dto">	
             		<li class='croomList' id="${dto.chat_list_id}">
-        			<div><img src="${dto.icon_url}" /></div>
+        			<div><img src="${dto.icon_url}" onerror="this.onerror=null; this.src='../img/profile.svg';"/></div>
         			<div>
           				<p>${dto.cr_name}</p>
          				<p>${dto.last_content}</p>

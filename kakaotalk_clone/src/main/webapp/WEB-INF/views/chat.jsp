@@ -27,7 +27,7 @@
           <div class="crin_topbox">
             <ul id="il" class="ilinfo">
             	<li>
-      				<div><img src='${chatlog[0].icon_url}' alt='usericon'/></div>
+      				<div><img src='${chatlog[0].icon_url}' onerror="this.onerror=null; this.src='../img/profile.svg';"/></div>
       				<div>
          				<p>${chatlog[0].cr_name}</p>
       				</div>
@@ -65,7 +65,7 @@
             		<c:otherwise>
             			<li class='chatStyleli'>
               				<div>
-                  				<img src='${dto.profile_image}' alt='usericon'/>
+                  				<img src='${dto.profile_image}' onerror="this.onerror=null; this.src='../img/profile.svg';"/>
               				</div>
               				<div>
               					<p>${dto.name}</p>
