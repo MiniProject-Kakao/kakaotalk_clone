@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
 	$('.moveChat').on('click', function(e) {
 		$.ajax({
 			url : "/createchatroomifnull",
@@ -14,4 +14,4 @@ $(document).ready(function(){
 			}
 		});
 	});
-})
+})*/

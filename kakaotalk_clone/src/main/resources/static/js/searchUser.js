@@ -16,8 +16,6 @@ function createInput() {
   }
 }
 
-
-
 searchInput.addEventListener('keyup', debounce);
 const listBox = document.getElementById('list_box');
 
