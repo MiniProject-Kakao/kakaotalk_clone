@@ -33,11 +33,11 @@ public class SocketHandler extends TextWebSocketHandler {
 		//send message
 		String msg = message.getPayload();
 		JSONObject obj = jsonToObjectParser(msg);
-		System.out.println(obj);
 		ChatDTO dto = new ChatDTO();
 		String result = "";
 		if (obj.get("type").equals("img")) {
-			result = "img";
+			dto.setUser_id((String) obj.get("user_id"));
+			result = "img+" + dto.getUser_id();
 		} else {
 			dto.setChat_list_id((String) obj.get("chat_list_id"));
 			dto.setUser_id((String) obj.get("user_id"));

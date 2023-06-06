@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="/css/chat.css" />
     <title>KakaoTalk</title>
 	<script src="/js/jquery-3.6.4.min.js"></script>
+	<script>
+		var sessionid = "<%=session.getAttribute("my_user_id") %>"
+	</script>
   </head>
 
   <body>
@@ -43,7 +46,7 @@
             <ul id="chat" class="chatStyle">
             	<c:forEach items="${chatlog}" var="dto">
             		<c:choose>
-            		<c:when test="${dto.user_id == 'test123'}">
+            		<c:when test="${dto.user_id == my_user_id}">
             			<li class='chatStyleMe'>
           					<div>
             					<div>
