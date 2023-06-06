@@ -77,22 +77,31 @@ public class ChatController {
 	@ResponseBody
 	public String createchatroomifnull(@RequestParam(value="friendId", required=false) String friendId, HttpSession session) {
 		HashMap<String, String> map = new HashMap<>();
+		System.out.println("first : " + friendId + " ~ " + (String)session.getAttribute("my_user_id"));
 		map.put("my_user_id", (String)session.getAttribute("my_user_id"));
 		map.put("friendId", friendId);
 		String str = UUID.randomUUID().toString();
 		map.put("last_content", UUID.randomUUID().toString());
 		int checkresult = service.checkChatList(map);
 		if (checkresult == 0) {
+			System.out.println("채팅방 있는지 조회결과(숫자) : " + checkresult);
 			int setchatlistresult = CLservice.setChatList(map);
+			System.out.println("채팅방 생성(chat_list 테이블) 결과 1(성공) or 0(실패): " + setchatlistresult);
 			String chat_list_id = CLservice.getSpecificChatRoom2(map);
 			map.put("chat_list_id", chat_list_id);
 			int firstinsertuserjoin = CLservice.firstinsertuserjoin(map);
+			System.out.println("채팅방 생성중간과정1(user_join 테이블) 결과 1(성공) or 0(실패): " + firstinsertuserjoin);
 			int secondinsertuserjoin = CLservice.secondinsertuserjoin(map);
+			System.out.println("채팅방 생성중간과정2(user_join 테이블) 결과 1(성공) or 0(실패): " + secondinsertuserjoin);
 			int defaultchatinsert = service.insertChatDefault(map);
+			System.out.println("채팅방 생성후 기본멘트 채팅방을 열였습니다. 데이터 입력 결과 1(성공) or 0(실패): " + defaultchatinsert);
 			int updateLastChatDefault = CLservice.updateLastChatDefault(chat_list_id);
+			System.out.println("최종단계 chat_list 테이블(last_content 기본멘트로 변경) 데이터 입력 결과 1(성공) or 0(실패): " + updateLastChatDefault);
 			return chat_list_id;
 		} else {
+			System.out.println("이미 채팅방이 있음");
 			String chat_list_id = CLservice.getSpecificChatRoom(map);
+			System.out.println("이미 있는 채팅방 조회 : " + chat_list_id);
 			return chat_list_id;
 		}
 		
