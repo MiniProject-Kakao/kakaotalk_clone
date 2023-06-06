@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class ChatListController {
 	
@@ -17,13 +19,13 @@ public class ChatListController {
 	
 	
 	@RequestMapping("/chatlist")
-	public ModelAndView chatlist() {
-		List<ChatListDTO> chatlist = service.getAllChatList("test123");
+	public ModelAndView chatlist(HttpSession session) {
+		System.out.println((String) session.getAttribute("my_user_id"));
+		List<ChatListDTO> chatlist = service.getAllChatList((String) session.getAttribute("my_user_id"));
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("chatList");
 		mv.addObject("chatlist", chatlist);
 		return mv;
 	}
-	
 
 }

@@ -13,19 +13,19 @@
 
     <title>KakaoTalk</title>
   </head>
-  <body>
-    <div class="container">
-      <header id="menu"></header>
-      <div class="see more">
-        <p class="see">더보기</p>
-      </div>
-      <div class="profile">
-        <p class="profile-name">사용자</p>
-        <p class="profile-id">계정</p>
-        <p class="profile-email">이메일@이메일</p>
-        <p class="profile-contacted">연락처</p>
-        <p class="profile-phone">000-0000-0000</p>
-      </div>
+<body>
+  <div class="container">
+    <header id="menu"></header>
+    <div class="see more">
+      <p class="see">더보기</p>
+    </div>
+    <div class="profile">
+      <p class="profile-name">${B_MoreDTO.getName()}</p>
+      <p class="profile-id">계정</p>
+      <p class="profile-email">${B_MoreDTO.getEmail()}</p>
+      <p class="profile-contacted">연락처</p>
+      <p class="profile-phone">${B_MoreDTO.getPhone()}</p>
+    </div>
 
       <hr class="contour" />
 
@@ -46,54 +46,46 @@
           class="profilecharracter"
         />
         <div>
-          <label for="username" class="sr-only"></label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            class="profilename2"
-            placeholder="사용자 이름을 입력하세요"
-          />
-          <hr class="profilehr" />
-          <label for="status-message" class="sr-only"></label>
-          <input
-            type="text"
-            id="status-message"
-            name="status-message"
-            class="message"
-            placeholder="상태메시지를 입력하세요"
-          />
-          <hr class="messagehr" />
-          <button class="inerscheck">확인</button>
-        </div>
+  <label for="username" class="sr-only"></label>
+  <input
+    type="text"
+    id="username"
+    name="username"
+    class="profilename2"
+    placeholder="사용자 이름을 입력하세요"
+    value="${B_MoreDTO.getUsername()}"
+  />
+  <hr class="profilehr" />
+  <label for="status-message" class="sr-only"></label>
+  <input
+    type="text"
+    id="status-message"
+    name="status-message"
+    class="message"
+    placeholder="상태메시지를 입력하세요"
+    value="${B_MoreDTO.getStatusMessage()}"
+  />
+  <hr class="messagehr" />
+  <button class="inerscheck">확인</button>
+</div>
       </div>
 
-      <div><button class="secession">탈퇴하기</button></div>
+<div>
+  <button class="secession">탈퇴하기</button>
+</div>
 
-      <div class="modal2">
-        <div class="secessionmodal">
-          <div class="withdrawal">탈퇴하시겠습니까?</div>
-          <div>
-            <button class="yes" data-href="/html/signin.html">네</button>
-          </div>
-          <div><button class="no">아니요</button></div>
-          <div class="cause">
-            탈퇴를 생각하시는 이유를 적어주세요.<br />
-            서비스 발전에 도움이 됩니다.
-          </div>
-          <label for="complain" class="sr-only"></label>
-
-          <input
-            type="text"
-            id="complain"
-            name="complain"
-            class="serviceevolution2"
-            placeholder="이곳에 적어주세요."
-          />
-          <hr class="serviceevolution" />
-        </div>
-      </div>
+<div class="modal2">
+  <div class="secessionmodal">
+    <div class="withdrawal">탈퇴하시겠습니까?</div>
+    <div>
+      <button class="yes" onclick="withdrawal()">네</button>
     </div>
+    <div><button class="no">아니요</button></div>
+  </div>
+</div>
+
+        </div>
+
     <script src="/js/more.js"></script>
     <script src="/js/menu.js"></script>
     <script>
@@ -134,6 +126,16 @@
         window.location.href = href;
       });
       document.querySelector('.no').addEventListener('click', modal2close);
+      
+      document.querySelector(".yes").addEventListener("click", function() {
+    	  // 컨트롤러 호출
+function withdrawal() {
+  var phone = "${B_MoreDTO.getPhone()}";
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/withdrawal?phone=" + phone, true);
+  xhr.send();
+
+}
     </script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>

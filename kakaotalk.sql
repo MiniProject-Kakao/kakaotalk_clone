@@ -17,6 +17,8 @@ CREATE TABLE `chat_list` (
 	`last_content`	VARCHAR(60)	NULL,
 	`created_at`	TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	`updated_at`	DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+	`cr_name`		VARCHAR(36) NOT NULL,
+    	`icon_url`		VARCHAR(200) NULL
 );
 
 CREATE TABLE `chat` (
@@ -26,6 +28,7 @@ CREATE TABLE `chat` (
 	`created_at`	TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	`updated_at`	DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 	`content`	VARCHAR(255) NOT NULL,
+	`type`		VARCHAR(36),
 	foreign key(`chat_list_id`) references `chat_list`(`chat_list_id`),
 	foreign key(`user_id`) references `user`(`user_id`)
 );
