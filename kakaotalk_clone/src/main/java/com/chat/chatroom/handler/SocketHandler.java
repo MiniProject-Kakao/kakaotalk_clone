@@ -15,6 +15,8 @@ import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
+import com.chat.chatlist.ChatListDTO;
+import com.chat.chatlist.ChatListService;
 import com.chat.chatroom.controller.ChatController;
 import com.chat.chatroom.controller.ChatDTO;
 import com.chat.chatroom.controller.ChatService;
@@ -28,12 +30,17 @@ public class SocketHandler extends TextWebSocketHandler {
 	@Qualifier("chatServiceImpl")
 	ChatService service;
 	
+	@Autowired
+	@Qualifier("chatListServiceImpl")
+	ChatListService CLservice;
+	
 	@Override
 	public void handleTextMessage(WebSocketSession session, TextMessage message) {
 		//send message
 		String msg = message.getPayload();
 		JSONObject obj = jsonToObjectParser(msg);
 		ChatDTO dto = new ChatDTO();
+		ChatListDTO CLdto = new ChatListDTO();
 		String result = "";
 		if (obj.get("type").equals("img")) {
 			dto.setUser_id((String) obj.get("user_id"));
@@ -44,6 +51,9 @@ public class SocketHandler extends TextWebSocketHandler {
 			dto.setContent((String) obj.get("content"));
 			dto.setType((String) obj.get("type"));
 			int insertCount = service.insertChat(dto);
+			CLdto.setChat_list_id((String) obj.get("chat_list_id"));
+			CLdto.setLast_content((String) obj.get("content"));
+			int clupcount = CLservice.updateLastChat(CLdto);
 			result = "msgok";
 		}
 		for (String key : sessionMap.keySet()) {

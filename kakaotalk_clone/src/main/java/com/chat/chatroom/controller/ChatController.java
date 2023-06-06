@@ -14,12 +14,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.chat.chatlist.ChatListDTO;
+import com.chat.chatlist.ChatListService;
+
 @Controller
 public class ChatController {
 	
 	@Autowired
 	@Qualifier("chatServiceImpl")
 	ChatService service;
+	
+	@Autowired
+	@Qualifier("chatListServiceImpl")
+	ChatListService CLservice;
 	
 	@RequestMapping("/chat")
 	public ModelAndView chat(@RequestParam String chat_list_id) {
@@ -48,6 +55,11 @@ public class ChatController {
 			dtoc.setContent("/upload/" + newFilename1);
 			dtoc.setType(dto.getType());
 			int insertCount = service.insertChat(dtoc);
+			
+			ChatListDTO CLdto = new ChatListDTO();
+			CLdto.setChat_list_id(dto.getChat_list_id());
+			CLdto.setLast_content("사진");
+			int updateCount = CLservice.updateLastChat(CLdto);
 		}
 		ModelAndView mv = new ModelAndView();
 		List<ChatDTO> list = service.getMonthChat(dto.getChat_list_id());

@@ -9,4 +9,5 @@ import org.springframework.stereotype.Repository;
 @Mapper
 public interface ChatListDAO {
 	public List<ChatListDTO> getAllChatList(String user_id);
+	public int updateLastChat(ChatListDTO dto);
 }

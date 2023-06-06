@@ -7,6 +7,17 @@
 	select * from chat_list where chat_list_id in (select chat_list_id from user_join where user_id = #{user_id}) order by updated_at desc;
 </select>
 
+<update id="updateLastChat" parameterType="String">
+	update chat_list set last_content = #{last_content} where chat_list_id = #{chat_list_id};
+</update>
+
+<select id="checkChatList" resultType="int" parameterType="userjoindto">
+	select count(chat_list_id) from user_join
+        where user_id= #{user_id}
+        and chat_list_id in
+        (select chat_list_id from user_join where user_id=#{chat_list_id});
+</select>
+
 </mapper>
 
 
