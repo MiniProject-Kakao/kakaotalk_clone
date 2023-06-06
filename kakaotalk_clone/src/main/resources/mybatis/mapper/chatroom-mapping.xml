@@ -21,6 +21,18 @@
 	values(default, #{chat_list_id}, #{user_id}, default, default, #{content} , #{type});
 </insert>
 
+<select id="checkChatList" resultType="int" parameterType="hashMap">
+	select count(chat_list_id) from user_join
+        where user_id= #{my_user_id}
+        and chat_list_id in
+        (select chat_list_id from user_join where user_id=#{friendId});
+</select>
+
+<insert id="insertChatDefault" parameterType="hashMap">
+	insert into chat 
+	values(default, #{chat_list_id}, #{my_user_id}, default, default, '채팅방을 열었습니다.' , 'text');
+</insert>
+
 </mapper>
 
 
