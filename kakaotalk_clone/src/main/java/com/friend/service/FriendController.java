@@ -24,10 +24,8 @@ public class FriendController {
 
 	@GetMapping("/home")
 	public ModelAndView friendList(HttpSession session ) {
-		session.setAttribute("my_user_id","9b012248-ff87-11ed-9979-b2f8c3e84292");
-
 		ModelAndView mv = new ModelAndView();
-
+		System.out.println(session.getAttribute("my_user_id"));
 		if (session.getAttribute("my_user_id") != null) {
 			String my_id = session.getAttribute("my_user_id").toString();
 			List<FriendResultDTO> friend_list = service.getTotalFriend(my_id);
@@ -44,7 +42,6 @@ public class FriendController {
 	
 	@PostMapping("/addFriend")
 	public ModelAndView addFriend(HttpSession session,String name, String phone) {
-		session.setAttribute("my_user_id","9b012248-ff87-11ed-9979-b2f8c3e84292");
 		ModelAndView mv = new ModelAndView();
 
 		int check = 3;
@@ -80,4 +77,6 @@ public class FriendController {
 		mv.setViewName("redirect:/home");
 		return mv;
 	}
+	
+	
 }
