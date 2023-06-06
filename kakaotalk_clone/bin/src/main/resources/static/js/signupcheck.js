@@ -29,6 +29,7 @@ function check (){
         $("#mail").focus();
         return false;
     }
+    
 
     if(!getCheck.test($("#pw").val())){
         alert("비밀번호를 확인해주세요. 숫자,영문포함 4~12자로 입력해주세요");

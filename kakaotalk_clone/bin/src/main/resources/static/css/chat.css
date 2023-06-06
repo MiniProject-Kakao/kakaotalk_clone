@@ -143,6 +143,12 @@
   overflow: hidden;
 }
 
+.box .chatStyle .chatStyleMe div:first-of-type img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .box .chatStyle .chatStyleMe div:first-of-type {
   width: 138px;
   margin-right: 5px;
@@ -181,6 +187,21 @@
 .chatroom .bottom div textarea {
   border: none;
   resize: none;
+}
+
+#file1 {
+	display:none;
+}
+
+.chatroom .bottom div .imgfile {
+  border: 1px solid transparent;
+  width: 60px;
+  height: 30px;
+  border-radius: 7px;
+  color: #99999a;
+  background-color: #f2f2f2;
+  margin-left: 5px;
+  cursor: pointer;
 }
 
 .chatroom .bottom div .chatsubmit {

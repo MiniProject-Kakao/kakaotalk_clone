@@ -19,5 +19,6 @@ $(document).ready(function(){
          $("#pw2").attr("type","password");
         }
        
+       
        });
    });
