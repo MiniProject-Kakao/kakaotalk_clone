@@ -2,7 +2,9 @@ package com.chat.chatroom.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +13,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.chat.chatlist.ChatListDTO;
 import com.chat.chatlist.ChatListService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class ChatController {
@@ -67,5 +72,31 @@ public class ChatController {
 		mv.addObject("chatlog", list);
 		return mv;
 	}
+	
+	@PostMapping("/createchatroomifnull")
+	@ResponseBody
+	public String createchatroomifnull(@RequestParam(value="friendId", required=false) String friendId, HttpSession session) {
+		HashMap<String, String> map = new HashMap<>();
+		map.put("my_user_id", (String)session.getAttribute("my_user_id"));
+		map.put("friendId", friendId);
+		String str = UUID.randomUUID().toString();
+		map.put("last_content", UUID.randomUUID().toString());
+		int checkresult = service.checkChatList(map);
+		if (checkresult == 0) {
+			int setchatlistresult = CLservice.setChatList(map);
+			String chat_list_id = CLservice.getSpecificChatRoom2(map);
+			map.put("chat_list_id", chat_list_id);
+			int firstinsertuserjoin = CLservice.firstinsertuserjoin(map);
+			int secondinsertuserjoin = CLservice.secondinsertuserjoin(map);
+			int defaultchatinsert = service.insertChatDefault(map);
+			int updateLastChatDefault = CLservice.updateLastChatDefault(chat_list_id);
+			return chat_list_id;
+		} else {
+			String chat_list_id = CLservice.getSpecificChatRoom(map);
+			return chat_list_id;
+		}
+		
+	}
+	
 	
 }

@@ -1,4 +1,4 @@
-/*$(document).ready(function(){
+$(document).ready(function(){
 	$('.moveChat').on('click', function(e) {
 		$.ajax({
 			url : "/createchatroomifnull",
@@ -7,11 +7,12 @@
 				friendId : e.target.id
 			},
 			success : function(data) {
-				//location.href = '/chat';
+				location.href = '/chat?chat_list_id=' + data;
+
 			},
-			error : function(error){
+			error : function(error, data){
 				console.log(error);
 			}
 		});
 	});
-})*/
+})
