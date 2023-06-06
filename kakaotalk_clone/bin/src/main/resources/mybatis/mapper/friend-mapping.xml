@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.friend.service.FriendDAO">
+
+	<resultMap type="com.friend.service.UserDTO" id="userMap">
+		<id property="user_id" column="user_id"/>
+		<result column="name" property="name"/>
+		<result column="phone" property="phone"/>
+		<result column="email" property="email"/>
+		<result column="password" property="password"/>
+		<result column="profile_image" property="profile_image"/>
+		<result column="profile_back_image" property="profile_back_image"/>
+		<result column="created_at" property="created_at"/>
+		<result column="deleted_at" property="deleted_at"/>
+		<result column="status_message" property="status_message"/>
+	</resultMap>
+
+	<resultMap type="com.friend.service.FriendResultDTO" id="friendResultMap">
+		<id property="id" column="id"/>
+		<result column="follow" property="follow"/>
+		<collection column="friend_user_id" property="friend_user_id" resultMap="userMap"/>
+	</resultMap>
+
+
+	<select id="findUserById" resultType="userdto" parameterType="string">
+		select * from user
+		where user_id=#{user_id}
+	</select>
+	
+	<select id="getTotalFriend" resultMap="friendResultMap" parameterType="string">
+		select f.id, f.follow, fu.* from friend_list f
+		left join user fu
+		on fu.user_id = f.friend_user_id
+		left join user iu
+		on iu.user_id = f.my_user_id
+		where my_user_id=#{my_user_id}
+		order by fu.name 
+	</select>
+	
+	<select id="searchUser" resultType="userdto" parameterType="string">
+		select * from user
+		where name = #{name}
+		and phone = #{phone}
+	</select>
+	
+	<insert id="addFriend" parameterType="string">
+		insert into friend_list(my_user_id,friend_user_id) values
+		(#{my_user_id},#{friend_user_id})
+	</insert>
+
+	<update id="updateFollow" parameterType="Map">
+		update friend_list set follow=#{follow}
+		where id=#{id}
+	</update>
+	
+	<select id="checkFriend" resultType="frienddto" parameterType="string">
+		select * from friend_list 
+		where my_user_id=#{my_user_id}
+		and friend_user_id=#{friend_user_id}
+	</select>
+	
+	<select id="searchList" resultMap="friendResultMap" parameterType="string">	
+		select * from friend_list f
+		left join user iu
+		on iu.user_id = f.my_user_id
+		left join user fu
+		on fu.user_id = f.friend_user_id
+		where my_user_id=#{my_user_id}
+		and fu.name like CONCAT('%',#{word},'%');
+	</select>
+	
+</mapper>
+
+
+
+
+
+

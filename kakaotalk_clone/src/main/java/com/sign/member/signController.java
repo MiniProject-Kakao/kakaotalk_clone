@@ -51,7 +51,7 @@ public class signController {
 		if(dto != null) {
 			if(dto.getPassword().equals(password)) {
 				session.setAttribute("my_user_id", dto.getUser_id());
-				return "/home" ;
+				return "redirect:/home" ;
 			}
 	}
 		return "signin";

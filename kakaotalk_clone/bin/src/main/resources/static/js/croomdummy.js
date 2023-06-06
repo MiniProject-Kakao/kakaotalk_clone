@@ -23,7 +23,7 @@ const chatroom = [
     updated_at: '2022-01-05 13:42:19.324003',
     cr_name: '채팅3',
     group: false,
-    cr_icon_url: '../img/user-circle.svg',
+    cr_icon_url: '/img/user-circle.svg',
     lastchat: 'ㅇㅋ'
   },
   {
@@ -32,8 +32,8 @@ const chatroom = [
     updated_at: '2022-01-05 13:42:19.324003',
     cr_name: '채팅4',
     group: false,
-    cr_icon_url: '../img/user-circle.svg',
-    lastchat: 'ㅇㅋ'
+    cr_icon_url: '/img/user-circle.svg',
+    lastchat: 'sdasdasvcassdasdsa'
   },
   {
     id: '5',
@@ -41,7 +41,7 @@ const chatroom = [
     updated_at: '2022-01-05 13:42:19.324003',
     cr_name: '채팅..',
     group: false,
-    cr_icon_url: '../img/user-circle.svg',
+    cr_icon_url: '/img/user-circle.svg',
     lastchat:
       '[3시간 후] 마우리치오 카텔란 전시회 [3시간 후] 마우리치오 카텔란 전시회 [3시간 후] 마우리치오 카텔란 전시회 [3시간 후] 마우리치오 카텔란 전시회'
   },
@@ -51,7 +51,7 @@ const chatroom = [
     updated_at: '2022-01-05 13:42:19.324003',
     cr_name: '채팅..',
     group: false,
-    cr_icon_url: '../img/user-circle.svg',
+    cr_icon_url: '/img/user-circle.svg',
     lastchat:
       '[3시간 후] 마우리치오 카텔란 전시회 [3시간 후] 마우리치오 카텔란 전시회 [3시간 후] 마우리치오 카텔란 전시회 [3시간 후] 마우리치오 카텔란 전시회'
   },
