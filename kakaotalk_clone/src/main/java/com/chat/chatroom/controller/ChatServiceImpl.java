@@ -16,4 +16,9 @@ public class ChatServiceImpl implements ChatService {
 		return dao.getMonthChat(chat_list_id);
 	}
 
+	@Override
+	public int insertChat(ChatDTO dto) {
+		return dao.insertChat(dto);
+	}
+
 }

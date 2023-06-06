@@ -189,6 +189,21 @@
   resize: none;
 }
 
+#file1 {
+	display:none;
+}
+
+.chatroom .bottom div .imgfile {
+  border: 1px solid transparent;
+  width: 60px;
+  height: 30px;
+  border-radius: 7px;
+  color: #99999a;
+  background-color: #f2f2f2;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
 .chatroom .bottom div .chatsubmit {
   border: 1px solid transparent;
   width: 60px;

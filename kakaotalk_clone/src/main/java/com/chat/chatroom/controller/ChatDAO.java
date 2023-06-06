@@ -9,4 +9,5 @@ import org.springframework.stereotype.Repository;
 @Mapper
 public interface ChatDAO {
 	public List<ChatDTO> getMonthChat(String chat_list_id);
+	public int insertChat(ChatDTO dto);
 }
