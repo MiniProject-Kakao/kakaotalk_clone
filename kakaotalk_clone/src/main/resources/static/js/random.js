@@ -1,11 +1,11 @@
 function numCheck1(){
+    var buttonvalue = $("#num-st").val();
     
+    if(buttonvalue=="인증번호 발송"){
     var randomnum='';
     for (var i=0; i<5;i++){
         randomnum += Math.floor(Math.random()*10)
     }
-    
-    //$("#result").text("인증번호는 "+randomnum+" 입니다.");
 
 
     let countTime = 0;
@@ -34,10 +34,49 @@ function numCheck1(){
         }
         countTime--;
     };
+    
+    var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
+    var mail = $("#mail").val(); //사용자의 이메일 입력값. 
+		
+    if(!getMail.test($("#mail").val())){
+        alert("이메일형식에 맞게 입력해주세요");
+        $("#mail").val("");
+        $("#mail").focus();
+        return false;
+    }
+        
+    else {
+        $.ajax({
+            type : 'post',
+            url : '/CheckMail',
+            data : {
+                mail:mail
+                },
+            dataType :'json',
 
-
-    $("#result").text("인증번호 남은시간 :");
+        });
+    $("#result").text("인증번호 남은시간 : ");
     $.time(180);
+        alert("인증번호가 전송되었습니다.") 
+        isCertification=true; //추후 인증 여부를 알기위한 값
+    }
+    $("#num-st").val("인증번호 확인"); 
+    }
+    
+    
+    if(buttonvalue=="인증번호 확인"){
+		if($("#reuslt").val() == key){
+			$("#result-1").text("이메일 인증을 완료했습니다."+key);
+			isCertification=true;
+		}
+		else{
+			$("#result-1").text("이메일 인증번호를 다시 확인해주세요."+key);
+			isCertification=false;
+			
+		}
+		
+	}
+    
     
 
 

@@ -51,6 +51,8 @@ function check (){
         $("#pw2").val("");
         $("#pw").focus();
     }
+    
+    
 
 
     

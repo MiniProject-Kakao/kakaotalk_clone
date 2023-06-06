@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,6 +40,7 @@
         <input
           type="text"
           id="num"
+          value=""
           alt="인증번호 입력"
           placeholder="인증번호 입력"
           required
@@ -49,6 +52,7 @@
           onclick="return numCheck1()"
         />
         <div><span id="result"></span><span class="time"></span></div>
+        <div><span id="result-1"></span><span class="time2"></span></div>
         <section class="mail-se">
           <input
             type="text"
@@ -102,6 +106,7 @@
         </section>
       </form>
     </div>
+
   </body>
   <script src="/js/siguploginevent.js"></script>
   <script src="/js/signupcheck.js"></script>
