@@ -23,7 +23,7 @@ public class FriendController {
 	FriendService service;
 
 	@GetMapping("/home")
-	public ModelAndView friendList(HttpSession session ) {
+	public ModelAndView friendList(HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		System.out.println(session.getAttribute("my_user_id"));
 		if (session.getAttribute("my_user_id") != null) {
