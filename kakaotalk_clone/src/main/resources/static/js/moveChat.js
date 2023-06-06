@@ -10,7 +10,7 @@ $(document).ready(function(){
 				location.href = '/chat?chat_list_id=' + data;
 
 			},
-			error : function(error, data){
+			error : function(error){
 				console.log(error);
 			}
 		});
