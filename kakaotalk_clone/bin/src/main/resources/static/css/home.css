@@ -3,11 +3,11 @@
   flex-direction: row;
 }
 
-.friendList {
+.friend_list {
   position: relative;
   width: calc(100% - 65px);
 }
-.friendList .top {
+.friend_list .top {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -67,7 +67,7 @@
   height: calc(100% - 50px - 28px);
   overflow-x: auto;
 }
-#listBox {
+#list_box {
   width: 100%;
   height: calc(100% - 50px);
   overflow-x: auto;
@@ -119,7 +119,7 @@
 .box {
   margin-top: 10px;
 }
-.box .boxTop {
+.box .box_top {
   padding: 10px 1px 10px 0;
   margin: 0 20px;
   border-top: 1px solid #f3f2f2;
@@ -127,7 +127,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.box .boxTop p {
+.box .box_top p {
   font-weight: medium;
   font-size: 11px;
   color: #999a99;
@@ -205,32 +205,32 @@
 }
 
 /* 화살표 */
-.box .boxTop .arrow {
+.box .box_top .arrow {
   width: 10px;
   height: 5px;
   transition: all 0.2s ease;
   position: relative;
   transform: rotate(0deg);
 }
-.box .boxTop .arrow span {
+.box .box_top .arrow span {
   position: absolute;
   width: 6px;
   height: 1px;
   background-color: #b2b2b3;
   transform: translate(-50%, -50%);
 }
-.box .boxTop .arrow span:first-of-type {
+.box .box_top .arrow span:first-of-type {
   left: 0;
   top: 2px;
   transform: rotate(40deg);
 }
-.box .boxTop .arrow span:last-of-type {
+.box .box_top .arrow span:last-of-type {
   right: 0;
   top: 2px;
   transform: rotate(-40deg);
 }
 
-.box .boxTop .arrow:hover span {
+.box .box_top .arrow:hover span {
   background-color: #403631;
 }
 

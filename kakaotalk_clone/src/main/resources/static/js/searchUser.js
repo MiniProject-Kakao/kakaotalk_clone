@@ -1,7 +1,7 @@
 const searchIcon = document.getElementById('search_icon');
 const searchBox = document.getElementById('search');
-const searchList = document.getElementById('searchList');
-const searchInput = document.getElementById('searchInput');
+const searchList = document.getElementById('search_list');
+const searchInput = document.getElementById('search_input');
 
 searchIcon.addEventListener('click', createInput);
 function createInput() {
@@ -16,8 +16,10 @@ function createInput() {
   }
 }
 
+
+
 searchInput.addEventListener('keyup', debounce);
-const listBox = document.getElementById('listBox');
+const listBox = document.getElementById('list_box');
 
 function debounce(e) {
   let timer;
@@ -26,7 +28,7 @@ function debounce(e) {
     const { value } = e.target;
 
     if (value.length > 0) {
-      let friends_filter = friend.filter(ele => {
+      let friends_filter = friend_arr.filter(ele => {
         const name = ele.name.toLowerCase();
         return name.includes(value);
       });
@@ -43,7 +45,7 @@ function debounce(e) {
           el => `<li>
           <div class="profile_img">
             <img
-              src="${el.icon_url}"
+              src="${el.profile_image}"
               onerror="this.onerror=null; this.src='../img/profile.svg';"
               />
           </div>
@@ -58,8 +60,12 @@ function debounce(e) {
                   }'>${keyword}</span>`
               )
               .join('')}</p>
-            ${el.value.length != 0 ? `<p>${el.value}</p>` : ''}
+            ${el.status_message != '' ? `<p>${el.status_message}</p>` : ''}
           </div>
+          <ul id="bookmark">
+            <li id="${el.id}" class="updateFollow" value="${el.follow ? '1' : '0'}">⭐</li>
+            <li>💬</li>
+          </ul>
         </li>`
         )
         .join(''));

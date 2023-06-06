@@ -1,7 +1,7 @@
 function toggle(id) {
   if (id === 'arrowLike') {
     let like = document.getElementById('like');
-    let arrow = document.querySelector('#arrowLike');
+    let arrow = document.querySelector('#arrow_like');
 
     if (like.style.display === 'none') {
       like.style.display = 'block';

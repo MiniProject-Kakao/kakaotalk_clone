@@ -7,4 +7,6 @@ public interface FriendService {
 	public int addFreind(String name, String phone,String my_user_id);
 	public void updateFollow(Boolean follow, String id);
 	public UserDTO findUserById(String user_id);
+	public List<FriendResultDTO> searchList(String my_user_id, String word);
+ 
 }
