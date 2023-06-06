@@ -33,7 +33,6 @@ public class ChatController {
 	@PostMapping("/imgupload")
 	public ModelAndView uploadresult(UploadDTO dto) throws IllegalStateException, IOException{
 		String savePath = "c:/kdt/upload/";
-		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" + dto.toString());
 		MultipartFile file1 = dto.getFile1();
 		String newFilename1 = null;
 		if (!file1.isEmpty()) {
@@ -48,11 +47,10 @@ public class ChatController {
 			dtoc.setUser_id(dto.getUser_id());
 			dtoc.setContent("/upload/" + newFilename1);
 			dtoc.setType(dto.getType());
-			System.out.println(dtoc);
 			int insertCount = service.insertChat(dtoc);
 		}
 		ModelAndView mv = new ModelAndView();
-		List<ChatDTO> list = service.getMonthChat("chatroom0001");
+		List<ChatDTO> list = service.getMonthChat(dto.getChat_list_id());
 		mv.setViewName("chat");
 		mv.addObject("chatlog", list);
 		return mv;
