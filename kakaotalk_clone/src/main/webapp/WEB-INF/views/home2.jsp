@@ -11,18 +11,10 @@
     <link rel="icon" href="/img/KakaoTalk_logo.svg" />
     <link rel="apple-touch-icon" href="/img/KakaoTalk_logo.svg" />
     <script src="/js/jquery-3.6.4.min.js"></script>
+    <script src="/js/render.js"></script>
     <link rel="stylesheet" href="/css/css.css" />
     <link rel="stylesheet" href="/css/home.css" />
-    <script src="/js/dummy.js"></script>
-    <script src="/js/render.js"></script>
     <title>KakaoTalk</title>
-    <% 
-	response.setHeader("Cache-Control","no-store"); 
-	response.setHeader("Pragma","no-cache"); 
-	response.setDateHeader("Expires",0); 
-	if (request.getProtocol().equals("HTTP/1.1"))
-	        response.setHeader("Cache-Control", "no-cache");
-	%> 
     <script>
       let my_id = "<%=session.getAttribute("my_user_id")%>";
 	  
@@ -30,19 +22,6 @@
       	alert("로그인해주세요.");
       	location.href = "/signin";
       }
-      
-	  let friend_arr = new Array();
-	  <c:forEach items="${friend_list}" var="list">
-		friend_arr.push({
-			id : "${list.friend_user_id.user_id}",
-			name : "${list.friend_user_id.name}",
-			phone : "${list.friend_user_id.phone}",
-			profile_image : "${list.friend_user_id.profile_image}",
-			profile_back_image : "${list.friend_user_id.profile_back_image}",
-			status_message : "${list.friend_user_id.status_message}",
-			follow : "${list.follow}"
-		});
-	  </c:forEach>
     </script>
   </head>
   <body>
@@ -58,15 +37,40 @@
           </div>
         </div>
 
-        <div id="search" style="display: none">
+        <form action="search" method="get" id="search" class="hide_content" >
           <div class="reading_glasses">
             <span class="circle"></span>
             <span class="line"></span>
           </div>
-          <input type="text" id="search_input" placeholder="이름으로 검색" />
-        </div>
+          <input type="text" id="search_input" name="word" placeholder="이름으로 검색" />
+          <button ></button>
+        </form>
 
-        <ul id="search_list" style="display: none" class="list_style"></ul>
+		<c:forEach items="${search_list }" var="list">
+        <ul id="search_list" class="list_style hide_content">
+        	<li>
+	          <div class="profile_img">
+	            <img
+	              src="${list.icon_url}"
+	              onerror="this.onerror=null; this.src='../img/profile.svg';"
+	              />
+	          </div>
+	          <div class="detail">
+	            <p>${list.name}
+	              <%-- .replaceAll(value, `@#$%${value}@#$%`)
+	              .split('@#$%')
+	              .map(
+	                keyword =>
+	                  `<span style='font-weight: ${
+	                    keyword === value ? 'bold' : ''
+	                  }'>${keyword}</span>`
+	              )
+	              .join('') --%></p>
+	            <p>${list.value}</p>
+	          </div>
+	        </li>
+        </ul>
+        </c:forEach>
 
         <div id="list_box" style="display: block">
           <div id="user">

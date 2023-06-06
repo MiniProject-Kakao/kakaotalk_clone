@@ -65,4 +65,19 @@ public class FriendController {
 
 		return new ModelAndView("redirect:/home");
 	}
+	
+	@GetMapping("/search")
+	public ModelAndView searchList(HttpSession session, @RequestParam("word") String word) {
+		ModelAndView mv = new ModelAndView();
+		if (session.getAttribute("my_user_id") != null) {
+			String my_user_id = session.getAttribute("my_user_id").toString();
+			List<FriendResultDTO> search_list = service.searchList(my_user_id, word);
+			
+			System.out.println(word);
+			mv.addObject("search_list",search_list);
+		}
+		
+		mv.setViewName("redirect:/home");
+		return mv;
+	}
 }
