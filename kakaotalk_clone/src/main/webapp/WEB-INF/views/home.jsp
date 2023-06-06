@@ -112,7 +112,7 @@
                     </div>
                     <ul id="bookmark">
                       <li id="${list.id}" class="updateFollow" value="${list.follow ? '1' : '0'}">⭐</li>
-                      <li id="${list.id}" class="moveChat">💬</li>
+                      <li id="${list.friend_user_id.user_id}" class="moveChat">💬</li>
                     </ul>
                   </li>
                 </c:if>
@@ -143,7 +143,7 @@
                   </div>
                   <ul id="bookmark">
                     <li id="${list.id}" class="updateFollow" value="${list.follow ? '1' : '0'}">⭐</li>
-                    <li id="${list.id}" class="moveChat">💬</li>
+                    <li id="${list.friend_user_id.user_id}" class="moveChat">💬</li>
                   </ul>
                 </li>
               </c:forEach>
