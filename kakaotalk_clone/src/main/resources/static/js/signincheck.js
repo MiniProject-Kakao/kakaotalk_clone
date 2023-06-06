@@ -15,10 +15,10 @@ function check(){
     return false;
     }
     
-    if(!getCheck.test($("#pw").val())){
+    if(!getCheck.test($("#password").val())){
         alert("비밀번호를 확인해주세요");
-        $("#pw").val("");
-        $("#pw").focus();
+        $("#password").val("");
+        $("#password").focus();
         return false;
     }
 	

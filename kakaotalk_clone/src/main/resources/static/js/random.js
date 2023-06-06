@@ -5,7 +5,7 @@ function numCheck1(){
         randomnum += Math.floor(Math.random()*10)
     }
     
-    $("#result").text("인증번호는 "+randomnum+" 입니다.");
+    //$("#result").text("인증번호는 "+randomnum+" 입니다.");
 
 
     let countTime = 0;
@@ -18,8 +18,9 @@ function numCheck1(){
 
     $.closeTime = function(){
         clearInterval(intervalCall);
-    }
-
+   }
+   
+   
     function alertFunc() {
         let min = Math.floor(countTime/60);
         let sec = countTime - (60 * min);
@@ -34,7 +35,10 @@ function numCheck1(){
         countTime--;
     };
 
+
+    $("#result").text("인증번호 남은시간 :");
     $.time(180);
+    
 
 
 }

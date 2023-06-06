@@ -1,9 +1,9 @@
 $("#id").on('input', checkInput);
-$("#pw").on('input', checkInput);
+$("#password").on('input', checkInput);
 
 function checkInput() {
   var idCheck = $("#id").val();   
-  var passwordCheck = $("#pw").val();  
+  var passwordCheck = $("#password").val();  
   var btnLogin = $('.loginbtn');
 
   if (idCheck === '' || passwordCheck === '') {

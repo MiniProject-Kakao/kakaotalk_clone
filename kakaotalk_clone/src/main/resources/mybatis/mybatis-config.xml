@@ -12,5 +12,5 @@
 		<typeAlias type="com.friend.service.FriendResultDTO" alias="friendresultdto" />
 	</typeAliases>
 	
-
+	
 </configuration>

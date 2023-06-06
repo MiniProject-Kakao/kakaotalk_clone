@@ -7,6 +7,7 @@ $("#pw2").on('input', checkInput);
 
 
 
+
 function checkInput() {
   var nameCheck = $("#name").val();   
   var phoneCheck =$("#phone").val();
