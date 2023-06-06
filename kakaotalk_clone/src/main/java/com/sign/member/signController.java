@@ -19,8 +19,6 @@ public class signController {
 	@Qualifier("memberservice")
 	MemberService ms;
 	
-	//MemberDAO dao;
-	
 	@RequestMapping("/signin")
 	public ModelAndView signin() {
 		ModelAndView mv = new ModelAndView();
@@ -51,11 +49,7 @@ public class signController {
 	public String loginprocess(String id, String password,HttpSession session) {
 		MemberDTO dto = ms.LoginMember(id);
 		if(dto != null) {
-			System.out.println(dto.getPassword());
-			System.out.println(password);
-			int i =Integer.parseInt(dto.getPassword());
-			int k =Integer.parseInt(password);
-			if(i == k) {
+			if(dto.getPassword().equals(password)) {
 				session.setAttribute("my_user_id", dto.getUser_id());
 				return "/home" ;
 			}
