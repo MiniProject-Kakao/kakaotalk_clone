@@ -13,8 +13,8 @@
     <script src="/js/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="/css/css.css" />
     <link rel="stylesheet" href="/css/home.css" />
-    <script src="/js/dummy.js"></script>
-    <script src="/js/render.js"></script>
+    <script src="/js/updateFollow.js"></script>
+    <script src="/js/moveChat.js"></script>
     <title>KakaoTalk</title>
     <% 
 	response.setHeader("Cache-Control","no-store"); 
@@ -112,7 +112,7 @@
                     </div>
                     <ul id="bookmark">
                       <li id="${list.id}" class="updateFollow" value="${list.follow ? '1' : '0'}">⭐</li>
-                      <li>💬</li>
+                      <li id="${list.id}" class="moveChat">💬</li>
                     </ul>
                   </li>
                 </c:if>
@@ -142,14 +142,8 @@
                     <p>${list.friend_user_id.status_message}</p>
                   </div>
                   <ul id="bookmark">
-                    <li
-                      id="${list.id}"
-                      class="updateFollow"
-                      value="${list.follow ? '1' : '0'}"
-                    >
-                      ⭐
-                    </li>
-                    <li>💬</li>
+                    <li id="${list.id}" class="updateFollow" value="${list.follow ? '1' : '0'}">⭐</li>
+                    <li id="${list.id}" class="moveChat">💬</li>
                   </ul>
                 </li>
               </c:forEach>

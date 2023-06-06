@@ -64,7 +64,7 @@ function debounce(e) {
           </div>
           <ul id="bookmark">
             <li id="${el.id}" class="updateFollow" value="${el.follow ? '1' : '0'}">⭐</li>
-            <li>💬</li>
+            <li id="${el.id}" class="moveChat">💬</li>
           </ul>
         </li>`
         )
