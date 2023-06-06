@@ -28,11 +28,6 @@ public class FriendDTO {
 	public void setFollow(boolean follow) {
 		this.follow = follow;
 	}
-	@Override
-	public String toString() {
-		return "FriendDTO [id=" + id + ", my_user_id=" + my_user_id + ", friend_user_id=" + friend_user_id + ", follow="
-				+ follow + "]";
-	}
 	
 	
 }

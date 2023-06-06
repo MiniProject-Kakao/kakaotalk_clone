@@ -23,26 +23,3 @@ function toggle(id) {
     } else arrow.style.transform = 'rotate(0deg)';
   }
 }
-
-/*
-const likeTab = document.querySelector('#like');
-const listTab = document.querySelector('#list');
-const li = document.querySelector('#like #bookmark');
-const li2 = document.querySelector('#list #bookmark');
-
-likeTab.addEventListener('click', bookmarker);
-listTab.addEventListener('click', bookmarker2);
-function bookmarker(e) {
-  if (li.style.display === 'none') {
-    li.style.display = 'flex';
-  } else {
-    li.style.display = 'none';
-  }
-}
-function bookmarker2(e) {
-  if (li2.style.display === 'none') {
-    li2.style.display = 'flex';
-  } else {
-    li2.style.display = 'none';
-  }
-}*/
