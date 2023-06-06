@@ -16,4 +16,9 @@ public class ChatListServiceImpl implements ChatListService {
 		return dao.getAllChatList(user_id);
 	}
 
+	@Override
+	public int updateLastChat(ChatListDTO dto) {
+		return dao.updateLastChat(dto);
+	}
+
 }

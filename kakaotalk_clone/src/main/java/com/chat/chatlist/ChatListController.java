@@ -20,7 +20,6 @@ public class ChatListController {
 	
 	@RequestMapping("/chatlist")
 	public ModelAndView chatlist(HttpSession session) {
-		System.out.println((String) session.getAttribute("my_user_id"));
 		List<ChatListDTO> chatlist = service.getAllChatList((String) session.getAttribute("my_user_id"));
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("chatList");

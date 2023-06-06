@@ -7,6 +7,7 @@
 		<typeAlias type="com.sign.member.MemberDTO" alias="memberdto" />
 		<typeAlias type="com.chat.chatlist.ChatListDTO" alias="chatlistdto" />
 		<typeAlias type="com.chat.chatroom.controller.ChatDTO" alias="chatdto" />
+		<typeAlias type="com.chat.chatlist.UserJoinDTO" alias="userjoindto"/>
 		<typeAlias type="com.friend.service.UserDTO" alias="userdto" />
 		<typeAlias type="com.friend.service.FriendDTO" alias="frienddto" />
 		<typeAlias type="com.friend.service.FriendResultDTO" alias="friendresultdto" />
