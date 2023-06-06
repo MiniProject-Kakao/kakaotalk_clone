@@ -6,14 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -24,8 +20,6 @@ public class FriendController {
 
 	@GetMapping("/home")
 	public ModelAndView friendList(HttpSession session ) {
-		session.setAttribute("my_user_id","9b012248-ff87-11ed-9979-b2f8c3e84292");
-
 		ModelAndView mv = new ModelAndView();
 
 		if (session.getAttribute("my_user_id") != null) {
@@ -44,7 +38,6 @@ public class FriendController {
 	
 	@PostMapping("/addFriend")
 	public ModelAndView addFriend(HttpSession session,String name, String phone) {
-		session.setAttribute("my_user_id","9b012248-ff87-11ed-9979-b2f8c3e84292");
 		ModelAndView mv = new ModelAndView();
 
 		int check = 3;
