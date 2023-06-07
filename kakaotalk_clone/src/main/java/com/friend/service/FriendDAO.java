@@ -15,5 +15,5 @@ public interface FriendDAO {
 	public FriendDTO checkFriend(String my_user_id,String friend_user_id);
 	public UserDTO findUserById(String user_id);
 	public List<FriendResultDTO> searchList(String my_user_id, String word);
-
+	public void deleteFriend(String id);
 }

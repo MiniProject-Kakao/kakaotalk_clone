@@ -48,5 +48,11 @@ public class FriendServiceImpl implements FriendService {
 	public List<FriendResultDTO> searchList(String my_user_id, String word) {
 		return dao.searchList(my_user_id, word);
 	}
+
+	@Override
+	public void deleteFriend(String id) {
+		dao.deleteFriend(id);
+	}
+	
 	
 }
