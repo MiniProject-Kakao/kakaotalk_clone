@@ -11,7 +11,10 @@
 		<typeAlias type="com.friend.service.UserDTO" alias="userdto" />
 		<typeAlias type="com.friend.service.FriendDTO" alias="frienddto" />
 		<typeAlias type="com.friend.service.FriendResultDTO" alias="friendresultdto" />
+		<typeAlias type="com.menu.more.B_MoreDTO" alias="bMoreDTO" />
 	</typeAliases>
 	
-	
+	 <mappers>
+	 <mapper resource="mybatis/mapper/more-mapping.xml"/>
+    </mappers>
 </configuration>
