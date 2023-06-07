@@ -70,6 +70,6 @@ function goChatList() {
   location.href = '/chatlist';
 }
 
-/*$("#file1").change(function() {
-	$("#chatbox").val($("#file1").val().slice(12) + " 파일을 첨부했습니다.");
-})*/
+$("#file1").change(function() {
+	alert($("#file1").val().slice(12) + " 파일을 첨부했습니다.");
+})
