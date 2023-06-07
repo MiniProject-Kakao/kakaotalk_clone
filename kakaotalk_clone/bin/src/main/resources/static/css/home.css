@@ -68,12 +68,29 @@
 #search_list {
   width: 100%;
   height: calc(100% - 50px - 28px);
-  overflow-x: auto;
+  overflow-y: auto;
 }
+#search_list::-webkit-scrollbar {
+  width: 0.5rem;
+}
+#search_list::-webkit-scrollbar-thumb {
+  background-color: #e5e5e5;
+  width: 0.3rem;
+  border-radius: 1rem;
+}
+
 #list_box {
   width: 100%;
   height: calc(100% - 50px);
   overflow-x: auto;
+}
+#list_box::-webkit-scrollbar {
+  width: 0.5rem;
+}
+#list_box::-webkit-scrollbar-thumb {
+  background-color: #e5e5e5;
+  width: 0.3rem;
+  border-radius: 1rem;
 }
 
 /* 사용자 */
@@ -258,7 +275,7 @@
   justify-content: space-between;
 }
 #addUser_form:before {
-  content: '';
+  content: "";
   z-index: -1;
   position: absolute;
   transform: rotate(-45deg);
@@ -317,7 +334,7 @@
   color: #999;
   font-size: 12px;
   cursor: auto;
-  color: '#000';
+  color: "#000";
   background-color: #f2f2f2;
 }
 #addUser_form button.active {
