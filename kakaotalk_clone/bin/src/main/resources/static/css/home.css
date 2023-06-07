@@ -82,7 +82,7 @@
 #list_box {
   width: 100%;
   height: calc(100% - 50px);
-  overflow-x: auto;
+  overflow-y: auto;
 }
 #list_box::-webkit-scrollbar {
   width: 0.5rem;
