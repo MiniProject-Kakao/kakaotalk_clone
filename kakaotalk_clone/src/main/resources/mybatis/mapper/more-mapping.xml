@@ -29,7 +29,7 @@
         SET deletedAt = #{deletedAt}
         WHERE phone = #{phone}
     </update>
-   
+	<!-- 내용추가 -->   
    <update id="updateUserContact" parameterType="com.menu.more.B_MoreDTO">
         UPDATE users
         SET contact = #{contact}
@@ -41,5 +41,6 @@
         SET profileImage = #{profileImage}
         WHERE phone = #{phone}
     </update>
+    
 </mapper>
 

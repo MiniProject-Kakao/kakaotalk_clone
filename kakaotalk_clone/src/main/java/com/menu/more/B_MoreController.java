@@ -40,7 +40,7 @@ public class B_MoreController {
         bMoreDTO.setUsername(updatedUsername);
         bMoreDTO.setStatusMessage(updatedStatusMessage);
 
-        // DB에 업데이트
+        // DB에 업데이트 
         int affectedRows = bMoreDAO.updateUserStatus(bMoreDTO);
 
         ModelAndView mv = new ModelAndView();

@@ -173,7 +173,7 @@ function withdrawal() {
 	  xhr.send();
 	}
 </script>
- <!--      <script>
+     <script>
 	let my_id = <%=session.getAttribute("my_user_id")%>
 				? "<%=session.getAttribute("my_user_id")%>"
 				: null;
@@ -183,7 +183,7 @@ function withdrawal() {
 		location.href = "/signin";
 	}
 	</script>
--->
+
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <script>
     document.querySelector('#profile-image').addEventListener('click', function() {

@@ -2,7 +2,7 @@ package com.menu.more;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
+//내용추가
 @Mapper
 public interface B_MoreDAO {
     public void insertMember(B_MoreDTO B_MoreDTO);

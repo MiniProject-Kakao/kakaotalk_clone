@@ -56,7 +56,7 @@ public class B_MoreDTO {
         this.statusMessage = statusMessage;
     }
 
-    
+    //내용추가
     public String getContact() {
         return contact;
     }

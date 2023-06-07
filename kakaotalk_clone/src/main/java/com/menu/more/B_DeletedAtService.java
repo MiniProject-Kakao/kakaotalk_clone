@@ -31,7 +31,7 @@ public class B_DeletedAtService {
         bMoreDTO.setPhone(phone);
         bMoreDTO.setUsername(updatedUsername);
         bMoreDTO.setStatusMessage(updatedStatusMessage);
-
+//내용추가
         int rowsAffected = moreDAO.updateUserStatus(bMoreDTO);
         if (rowsAffected > 0) {
             return true;  // 수정 성공
