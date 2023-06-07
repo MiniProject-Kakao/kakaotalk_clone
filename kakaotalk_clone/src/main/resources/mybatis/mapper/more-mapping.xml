@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.menu.more.B_MoreDAO">
+
+    <select id="selectUserByPhone" parameterType="string" resultType="com.menu.more.B_MoreDTO">
+        SELECT *
+        FROM users
+        WHERE phone = #{phone}
+    </select>
+
+    <update id="updateUserProfile" parameterType="com.menu.more.B_MoreDTO">
+        UPDATE users
+        SET name = #{name}, email = #{email}, phone = #{phone}
+        WHERE phone = #{phone}
+    </update>
+
+    <delete id="deleteUserByPhone" parameterType="string">
+        DELETE FROM users
+        WHERE phone = #{phone}
+    </delete>
+    <update id="updateUserStatus" parameterType="com.menu.more.B_MoreDTO">
+        UPDATE users
+        SET username = #{username}, statusMessage = #{statusMessage}
+        WHERE phone = #{phone}
+    </update>
+    <update id="updateDeletedAt" parameterType="java.util.Map">
+        UPDATE users
+        SET deletedAt = #{deletedAt}
+        WHERE phone = #{phone}
+    </update>
+	<!-- 내용추가 -->   
+   <update id="updateUserContact" parameterType="com.menu.more.B_MoreDTO">
+        UPDATE users
+        SET contact = #{contact}
+        WHERE phone = #{phone}
+    </update>
+
+    <update id="updateUserProfileImage" parameterType="com.menu.more.B_MoreDTO">
+        UPDATE users
+        SET profileImage = #{profileImage}
+        WHERE phone = #{phone}
+    </update>
+    
+</mapper>
+
