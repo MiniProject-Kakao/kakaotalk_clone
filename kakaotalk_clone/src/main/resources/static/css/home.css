@@ -68,7 +68,7 @@
 #search_list {
   width: 100%;
   height: calc(100% - 50px - 28px);
-  overflow-y: auto;
+  overflow-x: auto;
 }
 #search_list::-webkit-scrollbar {
   width: 0.3rem;
@@ -81,7 +81,7 @@
 #list_box {
   width: 100%;
   height: calc(100% - 50px);
-  overflow-y: auto;
+  overflow-x: auto;
 }
 #list_box::-webkit-scrollbar {
   width: 0.3rem;
