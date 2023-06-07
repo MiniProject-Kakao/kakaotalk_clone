@@ -1,5 +1,5 @@
 function toggle(id) {
-  if (id === 'arrowLike') {
+  if (id === 'arrow_like') {
     let like = document.getElementById('like');
     let arrow = document.querySelector('#arrow_like');
 
@@ -12,7 +12,7 @@ function toggle(id) {
     } else arrow.style.transform = 'rotate(0deg)';
   } else {
     let list = document.getElementById('list');
-    let arrow = document.querySelector('#arrowList');
+    let arrow = document.querySelector('#arrow_list');
 
     if (list.style.display === 'none') {
       list.style.display = 'block';
