@@ -86,12 +86,7 @@
           <div class="box">
             <div class="box_top">
               <p>즐겨찾기 <span id="list_length"></span></p>
-              <div
-                id="arrowLike"
-                class="arrow"
-                onclick="toggle(this.id);"
-                style="transform: rotate(0deg)"
-              >
+              <div id="arrow_like" class="arrow" onclick="toggle(this.id);" style="transform: rotate(0deg)">
                 <span></span>
                 <span></span>
               </div>
@@ -124,7 +119,7 @@
           <div class="box">
             <div class="box_top">
               <p>친구 <span id="listLength">${fn:length(friend_list) }</span></p>
-              <div id="arrowList" class="arrow" onclick="toggle(this.id);" style="transform: rotate(0deg)">
+              <div id="arrow_list" class="arrow" onclick="toggle(this.id);" style="transform: rotate(0deg)">
                 <span></span>
                 <span></span>
               </div>
