@@ -69,3 +69,7 @@ exit.addEventListener('click', goChatList);
 function goChatList() {
   location.href = '/chatlist';
 }
+
+$("#file1").change(function() {
+	$("#chatbox").val($("#file1").val().slice(12) + " 파일을 첨부했습니다.");
+})
