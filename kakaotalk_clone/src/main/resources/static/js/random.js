@@ -1,5 +1,6 @@
 function numCheck1(){
     var buttonvalue = $("#num-st").val();
+    var key ;
     
     if(buttonvalue=="인증번호 발송"){
     var randomnum='';
@@ -53,6 +54,11 @@ function numCheck1(){
                 mail:mail
                 },
             dataType :'json',
+            async : false,
+            success : function(data){
+				key=JSON.parse(data);
+				alert(key);
+			}
 
         });
     $("#result").text("인증번호 남은시간 : ");
@@ -66,11 +72,11 @@ function numCheck1(){
     
     if(buttonvalue=="인증번호 확인"){
 		if($("#reuslt").val() == key){
-			$("#result-1").text("이메일 인증을 완료했습니다."+key);
+			$("#result-1").text("이메일 인증을 완료했습니다.");
 			isCertification=true;
 		}
 		else{
-			$("#result-1").text("이메일 인증번호를 다시 확인해주세요."+key);
+			$("#result-1").text("이메일 인증번호를 다시 확인해주세요.");
 			isCertification=false;
 			
 		}

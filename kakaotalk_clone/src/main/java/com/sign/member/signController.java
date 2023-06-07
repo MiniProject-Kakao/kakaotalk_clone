@@ -22,7 +22,7 @@ import jakarta.servlet.http.HttpSession;
 public class signController {
 	
 	@Autowired
-	JavaMailSender javaMailSender;
+	//JavaMailSender javaMailSender;
 	@Qualifier("memberservice")
 	MemberService ms;
 	
@@ -64,7 +64,8 @@ public class signController {
 		return "signin";
 
 	}
-	
+	@Autowired
+	JavaMailSender javaMailSender;
 	
 	@PostMapping("/CheckMail") 
 	@ResponseBody  
