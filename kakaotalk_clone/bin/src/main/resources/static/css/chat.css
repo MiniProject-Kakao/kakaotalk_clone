@@ -150,9 +150,10 @@
 }
 
 .box .chatStyle .chatStyleMe div:first-of-type {
-  width: 138px;
+  /* width: 138px; */
   margin-right: 5px;
   overflow: hidden;
+  padding: 7px 10px;
 }
 
 .box .chatStyle .chatStyleMe div:first-of-type div:nth-of-type(n) {
@@ -165,7 +166,7 @@
 
 .box .chatStyle .chatStyleMe div:first-of-type div:nth-of-type(n) p {
   border-radius: 3px;
-  padding: 7% 5% 7% 5%;
+  /* padding: 7% 5% 7% 5%; */
   font-size: 12px;
   color: #000000;
   word-wrap: break-word;
@@ -190,7 +191,7 @@
 }
 
 #file1 {
-	display:none;
+  display: none;
 }
 
 .chatroom .bottom div .imgfile {
