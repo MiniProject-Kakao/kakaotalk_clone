@@ -71,5 +71,5 @@ function goChatList() {
 }
 
 $("#file1").change(function() {
-	$("#chatbox").val($("#file1").val().slice(12) + " 파일을 첨부했습니다.");
+	alert($("#file1").val().slice(12) + " 파일을 첨부했습니다.");
 })
