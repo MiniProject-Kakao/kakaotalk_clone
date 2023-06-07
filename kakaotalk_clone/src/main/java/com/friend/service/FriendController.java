@@ -73,5 +73,15 @@ public class FriendController {
 		return mv;
 	}
 	
+	@GetMapping("/deletefriend")
+	public ModelAndView deleteFriend(@RequestParam("idValue") String idValue) {
+		ModelAndView mv = new ModelAndView();
+		
+		service.deleteFriend(idValue);
+		
+		mv.setViewName("redirect:/home");
+		return mv;
+	}
+	
 	
 }

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/css/home.css" />
     <script src="/js/updateFollow.js"></script>
     <script src="/js/moveChat.js"></script>
+    <script src="/js/deleteFriend.js"></script>
     <title>KakaoTalk</title>
     <% 
 	response.setHeader("Cache-Control","no-store"); 
@@ -144,6 +145,7 @@
                   <ul id="bookmark">
                     <li id="${list.id}" class="updateFollow" value="${list.follow ? '1' : '0'}">⭐</li>
                     <li id="${list.friend_user_id.user_id}" class="moveChat">💬</li>
+                    <li id="${list.id}" class="deleteFriend">❌</li>
                   </ul>
                 </li>
               </c:forEach>

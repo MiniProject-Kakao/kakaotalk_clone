@@ -70,6 +70,11 @@
 		and fu.name like CONCAT('%',#{word},'%');
 	</select>
 	
+	<delete id="deleteFriend" parameterType="string">
+		delete from friend_list
+		where id=#{id}
+	</delete>
+	
 </mapper>
 
 

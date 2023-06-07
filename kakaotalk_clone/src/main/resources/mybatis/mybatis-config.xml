@@ -14,7 +14,4 @@
 		<typeAlias type="com.menu.more.B_MoreDTO" alias="bMoreDTO" />
 	</typeAliases>
 	
-	 <mappers>
-	 <mapper resource="mybatis/mapper/more-mapping.xml"/>
-    </mappers>
 </configuration>

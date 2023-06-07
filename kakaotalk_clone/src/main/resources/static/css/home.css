@@ -162,9 +162,6 @@
   padding: 2px 6px;
   cursor: pointer;
 }
-.list_style #bookmark li:nth-of-type(1) {
-  margin-right: 5px;
-}
 .list_style #bookmark li:hover {
   background-color: #c5c5c597;
 }
