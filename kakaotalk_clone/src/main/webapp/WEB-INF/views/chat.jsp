@@ -89,15 +89,12 @@
         </div>
 
         <div class="bottom">
-          <div>
             <form action="imgupload" id="imgform" method="post" enctype="multipart/form-data">
               <textarea
                 aria-label="chatbox"
                 id="chatbox"
                 class="chatbox"
                 name="chatbox"
-                cols="42"
-                rows="4"
               ></textarea>
               <div class="submitchat">
               	
@@ -105,12 +102,11 @@
               	<input type="hidden" id="user_id" name="user_id">
               	<input type="hidden" id="type" name="type">
               	<input type="hidden" id="content" name="content">
-              	<label class="imgfile" for="file1">이미지</label>
+              	<label class="imgfile" for="file1">📎</label>
               	<input type="file" id="file1" name="file1" accept="image/*"/>
              	<button type="button" onclick="send()" id="sendbtn" class="chatsubmit">전송</button>
               </div>
               </form>
-          </div>
         </div>
       </section>
     </div>
