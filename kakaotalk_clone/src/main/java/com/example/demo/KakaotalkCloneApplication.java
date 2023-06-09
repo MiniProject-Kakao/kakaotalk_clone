@@ -10,10 +10,12 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = "com.example")
 @ComponentScan(basePackages = "com.chat")
 @ComponentScan(basePackages = "com.friend.service")
+@ComponentScan(basePackages = "com.menu.more")
 @MapperScan(basePackages = "com.friend.service")
 @MapperScan(basePackages = "com.example")
 @MapperScan(basePackages = "com.chat")
 @MapperScan(basePackages = "com.sign")
+@MapperScan(basePackages = "com.menu.more")
 public class KakaotalkCloneApplication {
 
 	public static void main(String[] args) {

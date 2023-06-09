@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.sign.member.MemberDTO;
-import com.sign.member.MemberService;
 
 @Controller
 public class HelloController {
@@ -21,11 +19,5 @@ public class HelloController {
 	}
 	
 	
-	@RequestMapping("/more")
-	public ModelAndView more() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("more");
-		
-		return mv;
-	}
+
 }
