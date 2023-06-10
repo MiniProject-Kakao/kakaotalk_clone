@@ -2,7 +2,6 @@ package com.chat.chatroom.handler;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
