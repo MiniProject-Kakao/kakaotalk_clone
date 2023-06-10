@@ -85,12 +85,27 @@ body {
     padding-left: 0px;
     cursor: pointer;
   }
+  #num-st1 {
+    margin-left: 5px;
+    width: 80px;
+    height: 40px;
+    background-color: #403631;
+    color: #FFFFFF;
+    font-size: 11px;
+    padding-left: 0px;
+    cursor: pointer;
+    display:none;
+  }
 
   #result{
     margin-left: 76px;
     font-size :13px;
   }
   #result-1{
+ 	margin-left: 76px;
+    font-size :13px;
+  }
+  #result-2{
  	margin-left: 76px;
     font-size :13px;
   }
