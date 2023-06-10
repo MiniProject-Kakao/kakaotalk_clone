@@ -33,10 +33,12 @@
             id="phone"
             name="phone"
             alt="연락처 입력"
+            oninput="checkephone()"
             placeholder="연락처"
             required
           />
         </section>
+        <div id="result-2" class="duphone"></div>
         <input
           type="text"
           id="num"
@@ -51,6 +53,12 @@
           value="인증번호 발송"
           onclick="return numCheck1()"
         />
+        <input
+          type="button"
+          id="num-st1"
+          value="인증번호 확인"
+          onclick="return emailnum()"
+        />
         <div><span id="result"></span><span class="time"></span></div>
         <div><span id="result-1"></span><span class="time2"></span></div>
         <section class="mail-se">
@@ -60,8 +68,10 @@
             name="mail"
             alt="이메일 입력"
             placeholder="이메일"
+            oninput="checkemail()"
             required
           />
+          <div id=result-2 class="dumail"></div>
           <input
             type="password"
             class="secret-number"
@@ -108,6 +118,7 @@
     </div>
 
   </body>
+  <script src="/js/duplicatecheck.js"></script>
   <script src="/js/siguploginevent.js"></script>
   <script src="/js/signupcheck.js"></script>
   <script src="/js/checkbox.js"></script>

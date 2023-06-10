@@ -9,4 +9,10 @@
   	<select parameterType="String" resultType="memberdto" id="LoginMember">
   		select * from user where email = #{id} or phone=#{id}
   	</select>
+  	<select id="dupliemailcheck" parameterType="String" resultType="int">
+		SELECT COUNT(email) FROM user where email= #{mail}
+	</select>
+	<select id="dupliphonecheck" parameterType="String" resultType="int">
+		SELECT COUNT(phone) FROM user where phone= #{phone}
+	</select>
   </mapper>

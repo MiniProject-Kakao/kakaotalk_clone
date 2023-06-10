@@ -16,5 +16,11 @@ public class MemberServiceimple implements MemberService{
 	public MemberDTO LoginMember(String id) {
 		return dao.LoginMember(id);
 	}
+	public int dupliemailcheck(String mail) {
+		return dao.dupliemailcheck(mail);
+	}
+	public int dupliphonecheck(String phone) {
+		return dao.dupliphonecheck(phone);
+	}
 	
 }
