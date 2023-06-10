@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/css/css.css" />
 
   <title>KakaoTalk</title>
+
 </head>
 <body>
   <div class="container">
@@ -21,11 +22,11 @@
       <p class="see">더보기</p>
     </div>
 <div class="profile">
-  <p class="profile-name">${name}</p>
+  <p class="profile-name">${more.name}</p>
   <p class="profile-id">계정</p>
-  <p class="profile-email">${email}</p>
+  <p class="profile-email">${more.email}</p>
   <p class="profile-contacted">연락처</p>
-  <p class="profile-phone">${phone}</p>
+  <p class="profile-phone">${more.phone}</p>
 </div>
 
     <hr class="contour" />
@@ -46,7 +47,7 @@
       <form id="profile-form" method="POST" enctype="multipart/form-data">
           <img
               id="profile-image"
-              src="https://t1.kakaocdn.net/friends/new_store/prod/character/character_20230502134308_2e69548418dd497a81dc68175eb02aac.png"
+              src="/img/profile.svg"
               class="profilecharracter"
           />
           <input type="file" id="image" name="image" style="display: none;" onchange="previewProfileImage()" />
@@ -116,7 +117,7 @@
     }
 
     document.querySelector('.inerscheck').addEventListener('click', closeProfileEditor);
-document.querySelector('.inerscheck').addEventListener('click', updateProfile);
+	/* document.querySelector('.inerscheck').addEventListener('click', updateProfile); */
   </script>
 <script>
 function updateProfile() {
@@ -155,14 +156,14 @@ function updateProfile() {
 </script>
 <script>
 function withdrawal() {
-	  var phone = "${phone}";
+	  var phone = "${more.phone}";
 	  
 	  // 사용자가 실제로 탈퇴하길 원하는지 확인
 	  if (!confirm('정말로 탈퇴하시겠습니까?')) {
 	    return;
 	  }
 	  var xhr = new XMLHttpRequest();
-	  xhr.open("POST", "/more/withdrawal?phone=" + phone, true);
+	  xhr.open("POST", "/more/updateDeletedAt?phone=" + phone, true);
 	  xhr.onreadystatechange = function () {
 	    if (xhr.readyState === 4 && xhr.status === 200) {
 	     
@@ -173,7 +174,7 @@ function withdrawal() {
 	  xhr.send();
 	}
 </script>
-     <script>
+ <%-- <script>
 	let my_id = <%=session.getAttribute("my_user_id")%>
 				? "<%=session.getAttribute("my_user_id")%>"
 				: null;
@@ -182,8 +183,7 @@ function withdrawal() {
 		alert("로그인해주세요.");
 		location.href = "/signin";
 	}
-	</script>
-
+	</script> --%>
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <script>
     document.querySelector('#profile-image').addEventListener('click', function() {

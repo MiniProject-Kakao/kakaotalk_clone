@@ -1,43 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.menu.more.B_MoreDAO">
+<mapper namespace="com.menu.more.MoreDAO">
 
-    <select id="selectUserByPhone" parameterType="string" resultType="com.menu.more.B_MoreDTO">
+    <select id="selectUserByPhone" parameterType="string" resultType="com.menu.more.MoreDTO">
         SELECT *
-        FROM users
+        FROM user
         WHERE phone = #{phone}
     </select>
+    
+    <select id="selectUserById" parameterType="string" resultType="com.menu.more.MoreDTO">
+        SELECT *
+        FROM user
+        WHERE user_id = #{id}
+    </select>
 
-    <update id="updateUserProfile" parameterType="com.menu.more.B_MoreDTO">
-        UPDATE users
+    <update id="updateUserProfile" parameterType="com.menu.more.MoreDTO">
+        UPDATE user
         SET name = #{name}, email = #{email}, phone = #{phone}
         WHERE phone = #{phone}
     </update>
 
     <delete id="deleteUserByPhone" parameterType="string">
-        DELETE FROM users
+        DELETE FROM user
         WHERE phone = #{phone}
     </delete>
-    <update id="updateUserStatus" parameterType="com.menu.more.B_MoreDTO">
-        UPDATE users
+    <update id="updateUserStatus" parameterType="com.menu.more.MoreDTO">
+        UPDATE user
         SET username = #{username}, statusMessage = #{statusMessage}
         WHERE phone = #{phone}
     </update>
     <update id="updateDeletedAt" parameterType="java.util.Map">
-        UPDATE users
-        SET deletedAt = #{deletedAt}
-        WHERE phone = #{phone}
+        UPDATE user
+        SET deleted_at = #{deletedAt}
+        WHERE user_id = #{userId}
+        and deleted_at is Null
     </update>
 	<!-- 내용추가 -->   
-   <update id="updateUserContact" parameterType="com.menu.more.B_MoreDTO">
-        UPDATE users
+   <update id="updateUserContact" parameterType="com.menu.more.MoreDTO">
+        UPDATE user
         SET contact = #{contact}
         WHERE phone = #{phone}
     </update>
 
-    <update id="updateUserProfileImage" parameterType="com.menu.more.B_MoreDTO">
-        UPDATE users
+    <update id="updateUserProfileImage" parameterType="com.menu.more.MoreDTO">
+        UPDATE user
         SET profileImage = #{profileImage}
         WHERE phone = #{phone}
     </update>
